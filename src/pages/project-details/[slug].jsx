@@ -2,11 +2,24 @@ import { documentToPlainTextString } from '@contentful/rich-text-plain-text-rend
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 import moment from 'moment';
 import React from 'react';
-
 import SEOWrapper from '@/src/components/SEOWrapper';
-
 import contentClient from '../../contentful/client';
 import Layout from '../../layout/Layout';
+import ProjectsPaginatedContainer from '@/src/components/projects/projects-paginated-container';
+
+
+const imagesList = [
+  "https://images.pexels.com/photos/45201/kitty-cat-kitten-pet-45201.jpeg",
+  "https://i.pinimg.com/736x/5c/d4/c4/5cd4c4b82f304a8105f138efbbeb7938.jpg",
+  "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQpN_4eSqOjkRUhRuNxb5MPvXoFbynICo1i7A&s",
+  "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSfW0rOyWkv0OqfwFuljuVldoXEj5VitoWK5w&s",
+  "https://img.theweek.in/content/dam/week/news/2023/images/2023/7/10/cat-cats-with-facial-expressions-ai-image.jpg",
+  "https://cdn.theatlantic.com/thumbor/vDZCdxF7pRXmZIc5vpB4pFrWHKs=/559x0:2259x1700/1080x1080/media/img/mt/2017/06/shutterstock_319985324/original.jpg",
+  "https://www.newsinlevels.com/wp-content/uploads/2018/08/Depositphotos_454202308_L.jpg",
+];
+
+
+
 const ProjectDetails = ({ project }) => {
   const {
     startDate,
@@ -114,6 +127,9 @@ const ProjectDetails = ({ project }) => {
               </div>
             </div>
           ) : null}
+
+
+
           {mobileImages ? (
             <>
               <div className='row'>
@@ -127,6 +143,14 @@ const ProjectDetails = ({ project }) => {
               </div>
             </>
           ) : null}
+
+
+
+
+          <ProjectsPaginatedContainer imagesList={imagesList} />
+
+
+
           {resultText ? (
             <div className='row pt-40 pb-105 rpb-80 wow fadeInUp delay-0-2s'>
               <div className='col-lg-4'>

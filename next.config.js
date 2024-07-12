@@ -11,7 +11,6 @@ const nextConfig = {
       child_process: false,
       tls: false,
     };
-
     return config;
   },
 };
