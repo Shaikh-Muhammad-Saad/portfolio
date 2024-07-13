@@ -298,7 +298,7 @@ const Index4 = ({ workHistory }) => {
               </div>
             </div>
           </div>
-          
+
         </div>
       </section>
       {/* My Skills Area end */}

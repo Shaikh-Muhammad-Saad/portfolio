@@ -6,12 +6,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint",
-    "format:check": "prettier -c .",
-    "lint:fix": "eslint --fix && yarn format",
-    "lint:strict": "eslint --max-warnings=0 src",
-    "prepare": "husky install && chmod ug+x .husky/*",
-    "format": "prettier -w ."
+    "lint": "next lint"
   },
   "dependencies": {
     "@contentful/rich-text-plain-text-renderer": "^16.0.7",
@@ -57,7 +52,6 @@
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-simple-import-sort": "^10.0.0",
     "eslint-plugin-unused-imports": "^2.0.0",
-    "husky": "^8.0.3",
     "lint-staged": "^13.1.1",
     "prettier": "^2.8.3",
     "sass": "^1.64.2"

@@ -25,12 +25,12 @@ function SEOWrapper({ title, description, keywords, author, image }) {
 }
 
 SEOWrapper.defaultProps = {
-  title: 'Usama Irfan - Software Engineer',
+  title: 'Shaikh Muhammad Saad - Web Developer',
   description:
     'Passionate Software Engineer specializing in the MERN stack (MongoDB, Express.js, React, Node.js) with proven expertise in CMS integration and robust full-stack applications. Explore a diverse portfolio showcasing innovative mobile solutions and dynamic web projects, reflecting a dedication to top-tier development standards and cutting-edge technologies.',
   keywords:
-    'software, engineer, web development, wordpress, mern, mongodb, nodejs, reactjs, technology',
-  author: 'Usama Irfan',
+    'software, engineer, web development, mern, mongodb, nodejs, reactjs, technology',
+  author: 'Saad',
   image: '/assets/images/about/me.jpeg',
 };
 

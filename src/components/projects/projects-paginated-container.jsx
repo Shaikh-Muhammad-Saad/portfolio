@@ -1,8 +1,9 @@
 import { useState } from "react";
+import FsLightbox from "fslightbox-react";
+
 
 
 const ProjectsPaginatedContainer = ({ imagesList }) => {
-
 
     const [currentPage, setCurrentPage] = useState(1);
     const itemsPerPage = 10;
@@ -38,7 +39,6 @@ const ProjectsPaginatedContainer = ({ imagesList }) => {
             <div className="container container-1290">
                 <div className="row">
 
-
                     {currentItems.map((src, index) => (
                         <div key={index} className="col-xl-4 col-md-6">
                             <div className="blog-item wow fadeInUp delay-0-6s">
@@ -51,6 +51,8 @@ const ProjectsPaginatedContainer = ({ imagesList }) => {
 
 
 
+
+                    {/* PAGINATION  */}
                     <div className="col-lg-12">
                         <ul className="pagination mt-10 flex-wrap justify-content-center wow fadeInUp delay-0-2s">
                             <li className={`page-item ${currentPage === 1 ? "disabled" : ""}`}>

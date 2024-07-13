@@ -28,6 +28,8 @@ export default function Document() {
         {/* Main Style */}
         <link rel='stylesheet' href='/assets/css/style.css' />
       </Head>
+
+
       <body>
         <Main />
         <NextScript />
