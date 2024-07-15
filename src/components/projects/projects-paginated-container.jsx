@@ -1,5 +1,4 @@
 import { useState } from "react";
-import FsLightbox from "fslightbox-react";
 
 
 
