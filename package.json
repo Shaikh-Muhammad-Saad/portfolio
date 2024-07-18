@@ -70,6 +70,5 @@
     "src/**/*.{json,css,scss,md}": [
       "prettier -w"
     ]
-  },
-  "packageManager": "yarn@4.3.1"
+  }
 }
