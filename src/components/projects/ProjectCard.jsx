@@ -28,6 +28,7 @@ const ProjectCard = ({ project }) => {
         </h4>
       </div>
     </>
+
   );
 };
 
