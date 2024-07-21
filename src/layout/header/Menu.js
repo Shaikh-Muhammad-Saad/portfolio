@@ -33,18 +33,13 @@ const SingleMenu = () => {
         </Link>
       </li>
       <li>
-        <Link legacyBehavior href='/#certifications'>
-          <a>Certifications</a>
+        <Link legacyBehavior href='/#education'>
+          <a>Education</a>
         </Link>
       </li>
       <li>
         <Link legacyBehavior href='/#contact'>
           <a>Contact</a>
-        </Link>
-      </li>
-      <li>
-        <Link legacyBehavior href='/blog'>
-          <a>Blog</a>
         </Link>
       </li>
     </ul>

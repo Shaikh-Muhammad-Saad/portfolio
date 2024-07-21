@@ -109,14 +109,18 @@ const Index4 = ({ workHistory }) => {
       >
         <div className='container'>
           <h1 className='hero-title mb-100 rmb-50 wow fadeInUp delay-0-2s'>
-            Usama Irfan
-            <span className='arrow'>
+            Shaikh Muhammad Saad
+            {/* <br /> */}
+            {/* <span className='arrow'>
               <img
                 className='wow fadeInLeft delay-0-6s'
                 src='assets/images/hero/title-arrow.png'
                 alt='Arrow'
               />
             </span>
+            Software Engineer */}
+
+            <br />
             Software Engineer
           </h1>
           <div className='row align-items-center justify-content-between'>
@@ -385,7 +389,7 @@ const Index4 = ({ workHistory }) => {
       {/* Headline Area end */}
       {/* Our Awards Area start */}
       <section
-        id='certifications'
+        id='education'
         className='our-awards-area py-130 rpy-100 rel z-1'
       >
         <div className='container container-1290'>

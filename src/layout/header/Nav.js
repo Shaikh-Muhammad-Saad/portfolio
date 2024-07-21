@@ -9,8 +9,13 @@ const Nav = () => {
         <div className='navbar-header py-10'>
           <div className='mobile-logo'>
             <Link legacyBehavior href='/'>
-              <a>
-                <h4>Usama Irfan</h4>
+              <a className='d-flex justify-content-center align-items-center'>
+                <img
+                  className=''
+                  src='/assets/images/icons/code-icon.svg'
+                  alt='Toggler'
+                />
+                <h5 className='p-0 m-0 ms-2'>Saad</h5>
               </a>
             </Link>
           </div>
