@@ -108,7 +108,7 @@ const Index4 = ({ workHistory }) => {
         style={{ backgroundImage: 'url(assets/images/hero/hero-two-bg.png)' }}
       >
         <div className='container'>
-          <h1 className='hero-title mb-100 rmb-50 wow fadeInUp delay-0-2s'>
+          <h1 className='hero-title  wow fadeInUp delay-0-2s'>
             Shaikh Muhammad Saad
             {/* <br /> */}
             {/* <span className='arrow'>
@@ -123,7 +123,7 @@ const Index4 = ({ workHistory }) => {
             <br />
             Software Engineer
           </h1>
-          <div className='row align-items-center justify-content-between'>
+          {/* <div className='row align-items-center justify-content-between'>
             <div className='col-xl-3 col-lg-4'>
               <div className='hero-two-content mb-50 wow fadeInRight delay-0-2s'>
                 <p>
@@ -161,27 +161,26 @@ const Index4 = ({ workHistory }) => {
                 </Link>
               </div>
             </div>
-          </div>
+          </div> */}
         </div>
       </section>
       {/* Hero Section End */}
       {/* About Us Area start */}
       <section id='about' className='about-area rel z-1'>
         <div className='container-fluid'>
-          <div className='about-four-wrap py-130 rpy-100'>
-            <div className='container container-1290'>
+          <div className='about-four-wrap py-50 rpy-100'>
+            <div className='container container-1290 ssss'>
               <div className='row gap-70 align-items-center'>
                 <div className='col-lg-6'>
                   <div className='about-four-content rmb-55 wow fadeInUp delay-0-2s'>
                     <div className='section-title mb-35'>
                       <span className='sub-title mb-15'>About Me</span>
-                      <h2>Professional &amp; Experience Software Engineer</h2>
+                      <h3>Professional &amp; Experienced Software Engineer</h3>
                     </div>
                     <p>
-                      A professional Software Engineer with more than 5 years of
+                      A professional Software Engineer with 4 years of
                       experience, proficient in cutting-edge technologies such
-                      as the MERN stack, .NET EF/MVC, React-native, Android, iOS
-                      etc. With a proven track record in both web and mobile
+                      as the MERN stack. With a proven track record in both web and mobile
                       development, I specialize in delivering robust, scalable,
                       and efficient digital solutions. As an industry-savvy
                       professional, I stay ahead of tech trends, ensuring my
@@ -192,7 +191,7 @@ const Index4 = ({ workHistory }) => {
                     </p>
                     <div className='list-style-three pt-25 pb-20'>
                       <li>Web Development</li>
-                      <li>Mobile Apps</li>
+                      <li>Backend Development</li>
                       <li>UI/UX Designing</li>
                       <li>SQL / NoSQL Database</li>
                     </div>
@@ -200,7 +199,7 @@ const Index4 = ({ workHistory }) => {
                 </div>
                 <div className='col-lg-6'>
                   <div className='about-four-image wow fadeInUp delay-0-4s'>
-                    <img src='assets/images/about/me.jpeg' alt='About' />
+                    <img src='assets/images/about/me.png' alt='About' />
                   </div>
                 </div>
               </div>
@@ -273,7 +272,7 @@ const Index4 = ({ workHistory }) => {
                   <span className='sub-title mb-15'>
                     My Skills &amp; Experience
                   </span>
-                  <h2>I’m A Certified &amp; Skilled Engineer</h2>
+                  <h3>I’m A Skilled Engineer</h3>
                 </div>
                 <p>
                   Boasting an impressive collection of certifications, my
