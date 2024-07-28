@@ -63,8 +63,8 @@ const ProjectsPaginatedContainer = ({ imagesList }) => {
                     <div className="row">
 
                         {currentItems.map((src, index) => (
-                            <div key={index} className="col-xl-4 col-md-6" onClick={() => setSelectedImage({ imgIndex: index })}>
-                                <div className="blog-item wow fadeInUp delay-0-6s">
+                            <div key={index} className="col-lg-6 col-md-12 " onClick={() => setSelectedImage({ imgIndex: index })}>
+                                <div className=" wow fadeInUp delay-0-4s">
                                     <div className="image-container">
                                         <img className="img-fluid" src={src} alt="Blog" />
                                     </div>
@@ -78,6 +78,9 @@ const ProjectsPaginatedContainer = ({ imagesList }) => {
                                 onClose={() => setSelectedImage(null)}
                                 images={currentItems.map((img) => ({ url: img }))}
                                 startIndex={selectedImage.imgIndex}
+                                doubleClickZoom={0.5}
+                                allowZoom={true}
+
                             /> : null
                         }
 

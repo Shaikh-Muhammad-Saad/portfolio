@@ -165,6 +165,10 @@ const Index4 = ({ workHistory }) => {
         </div>
       </section>
       {/* Hero Section End */}
+
+
+
+
       {/* About Us Area start */}
       <section id='about' className='about-area rel z-1'>
         <div className='container-fluid'>
@@ -208,60 +212,14 @@ const Index4 = ({ workHistory }) => {
         </div>
       </section>
       {/* About Us Area end */}
+
+
+
       {/* Service Box start */}
-      <section className='service-section pt-130 rpt-100 pb-100 rpb-70'>
-        <div className='container container-1290'>
-          <div className='row'>
-            <div className='col-xl-4 col-md-6'>
-              <div className='service-item style-three wow fadeInUp delay-0-2s'>
-                <div className='icon'>
-                  <i className='flaticon-ux' />
-                </div>
-                <h4>
-                  <span>Professional &amp; Experienced</span>
-                </h4>
-                <p>
-                  With a robust professional background and a wealth of hands-on
-                  experience, I&apos;ve honed my skills to deliver results that
-                  exceed expectations, navigating complex challenges with
-                  expertise and precision.
-                </p>
-              </div>
-            </div>
-            <div className='col-xl-4 col-md-6'>
-              <div className='service-item style-three wow fadeInDown delay-0-2s'>
-                <div className='icon'>
-                  <i className='flaticon-optimization-1' />
-                </div>
-                <h4>
-                  <span>Dedication &amp; Modern Code</span>
-                </h4>
-                <p>
-                  Employing modern coding practices, I consistently deliver
-                  robust solutions that stand the test of time, ensuring both
-                  efficiency and adaptability in a rapidly evolving digital
-                  landscape.
-                </p>
-              </div>
-            </div>
-            <div className='col-xl-4 col-md-6'>
-              <div className='service-item style-three wow fadeInUp delay-0-2s'>
-                <div className='icon'>
-                  <i className='flaticon-ai' />
-                </div>
-                <h4>
-                  <span>Creative &amp; Intelligent</span>
-                </h4>
-                <p>
-                  With a flair for creativity and a keen intelligence, I bring
-                  innovative solutions that resonate and inspire.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      <section className='service-section pt-130 rpt-100 pb-100 rpb-70'></section>
       {/* Service Box end */}
+
+
       {/* My Skills Area start */}
       <section className='my-skills-area rel z-1'>
         <div className='container container-1290'>
@@ -305,35 +263,24 @@ const Index4 = ({ workHistory }) => {
         </div>
       </section>
       {/* My Skills Area end */}
-      {/* Counter Three start */}
-      <section className='counter-section-three pt-70 pb-20 my-130 rmy-100'>
-        <div className='container'>
-          <div className='row'>
-            <div className='col-xl-4 col-md-6'>
-              <div className='counter-item-three counter-text-wrap wow fadeInRight delay-0-2s'>
-                <i className='flaticon-software-development' />
-                <Counter end={5} extraClass={'plus'} />
-                <span className='counter-title'>Years Of Experience</span>
-              </div>
-            </div>
-            <div className='col-xl-4 col-md-6'>
-              <div className='counter-item-three counter-text-wrap wow fadeInRight delay-0-4s'>
-                <i className='flaticon-development' />
-                <Counter end={25} extraClass={'plus'} />
-                <span className='counter-title'>Project Complete</span>
-              </div>
-            </div>
-            <div className='col-xl-4 col-md-6'>
-              <div className='counter-item-three counter-text-wrap wow fadeInRight delay-0-6s'>
-                <i className='flaticon-star-symbol' />
-                <Counter end={100} extraClass={'percent'} />
-                <span className='counter-title'>Clients Satisfactions</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      {/* Counter Three end */}
+
+
+
+      {/* Service Box start */}
+      <section className='service-section pt-130 rpt-100 pb-100 rpb-70'></section>
+      {/* Service Box end */}
+
+
+      {/* Work Gallery Area start */}
+      <ProjectsSlider />
+      {/* Work Gallery Area end */}
+
+
+      {/* Service Box start */}
+      <section className='service-section pt-130 rpt-100 pb-100 rpb-70'></section>
+      {/* Service Box end */}
+
+
       {/* Work History */}
       <section id='work' className='work-gallery-area pb-130 rpb-100'>
         <div className='container container-1290'>
@@ -349,9 +296,9 @@ const Index4 = ({ workHistory }) => {
         <WorkVerticalTimeline timeline={workHistory} />
       </section>
       {/* Work History End */}
-      {/* Work Gallery Area start */}
-      <ProjectsSlider />
-      {/* Work Gallery Area end */}
+
+
+
       {/* Headline area start */}
       <div className='headline-area bgc-primary py-40 rpy-25'>
         <div className='container-fluid'>
@@ -385,6 +332,9 @@ const Index4 = ({ workHistory }) => {
           </div>
         </div>
       </div>
+
+
+
       {/* Headline Area end */}
       {/* Our Awards Area start */}
       <section
@@ -400,6 +350,7 @@ const Index4 = ({ workHistory }) => {
               </div>
             </div>
           </div>
+
           <div className='row align-items-center justify-content-between'>
             <Tab.Container defaultActiveKey={'awards-tab-one'}>
               <div className='col-lg-5'>
@@ -537,6 +488,8 @@ const Index4 = ({ workHistory }) => {
           />
         </div>
       </div>
+
+
       {/* CTA Area end */}
       {/* Drop Me Area start */}
       <section id='contact' className='drop-me-area'>

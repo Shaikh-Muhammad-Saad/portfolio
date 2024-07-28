@@ -130,21 +130,31 @@
   position: relative;
 }
 
+@media (max-width: 992px) {
+  .image-container {
+    padding-top: 65%;
+  }
+}
+
+/* 576 */
+
 .image-container img {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
-  height: 100%;
-  object-fit: cover;
+  /* height: 100%; */
+  object-fit: contain;
   cursor: pointer;
 }
 
 
 .lb-canvas .lb-img {
-  width: 80vw;
+  max-width: 100vw !important;
+  width: 100vw !important;
   height: 80vh;
   margin-top: -20px;
+  object-fit: contain;
 }
 
 
@@ -152,14 +162,23 @@
   position: relative !important;
   top: 92.5vh;
   justify-content: center !important;
+  z-index: 10000 !important;
 }
 
 @media (max-width: 600px) {
   .lb-container .lb-header {
-    display: none !important;
+    top: 12vh;
   }
 
+  .lb-show-mobile {
+    display: none !important;
+  }
 }
+
+
+/* .lb-header .lb-button:not(:last-child) {
+  display: block !important;
+} */
 
 .lb-container {
   z-index: 5000000 !important;
