@@ -23,4 +23,5 @@ const Header = ({ header, singleMenu }) => {
       return <DefaultHeader singleMenu={singleMenu} />;
   }
 };
+
 export default Header;
