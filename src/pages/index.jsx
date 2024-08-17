@@ -36,12 +36,12 @@ const techImages = [
     title: 'Javascript',
   },
   {
-    src: 'assets/images/skills/net.png',
+    src: 'assets/images/skills/react.png',
     alt: 'Skill icon',
-    title: '.NET',
+    title: 'React.js',
   },
   {
-    src: 'assets/images/skills/next.jpeg',
+    src: 'assets/images/skills/next.png',
     alt: 'Skill icon',
     title: 'Next.js',
   },
@@ -55,45 +55,66 @@ const techImages = [
     alt: 'Skill icon',
     title: 'Typescript',
   },
-  {
-    src: 'assets/images/skills/skill7.png',
-    alt: 'Skill icon',
-    title: 'PHP',
-  },
-  {
-    src: 'assets/images/skills/laravel.png',
-    alt: 'Skill icon',
-    title: 'Laravel',
-  },
+
   {
     src: 'assets/images/skills/tailwind.png',
     alt: 'Skill icon',
     title: 'Tailwind',
   },
   {
-    src: 'assets/images/skills/react.png',
+    src: 'assets/images/skills/express.png',
     alt: 'Skill icon',
-    title: 'React.js',
+    title: 'Express.js',
   },
   {
-    src: 'assets/images/skills/android-swift.png',
+    src: 'assets/images/skills/nestjs.png',
     alt: 'Skill icon',
-    title: 'React-native',
+    title: 'Nest.js',
   },
   {
-    src: 'assets/images/skills/skill13.png',
+    src: 'assets/images/skills/mongodb.png',
     alt: 'Skill icon',
-    title: 'Vue.js',
+    title: 'MongoDB',
   },
   {
-    src: 'assets/images/skills/skill6.png',
+    src: 'assets/images/skills/postgresql.png',
     alt: 'Skill icon',
-    title: 'WordPress',
+    title: 'PostgreSQL',
   },
   {
-    src: 'assets/images/skills/skill11.png',
+    src: 'assets/images/skills/docker.png',
     alt: 'Skill icon',
-    title: 'Shopify',
+    title: 'Docker',
+  },
+  {
+    src: 'assets/images/skills/vercel.png',
+    alt: 'Skill icon',
+    title: 'Vercel',
+  },
+  {
+    src: 'assets/images/skills/aws.png',
+    alt: 'Skill icon',
+    title: 'AWS EC2',
+  },
+  {
+    src: 'assets/images/skills/materialUI.png',
+    alt: 'Skill icon',
+    title: 'Material UI',
+  },
+  {
+    src: 'assets/images/skills/mongoose.png',
+    alt: 'Skill icon',
+    title: 'Mongoose',
+  },
+  {
+    src: 'assets/images/skills/prisma.png',
+    alt: 'Skill icon',
+    title: 'Prisma',
+  },
+  {
+    src: 'assets/images/skills/firebase.png',
+    alt: 'Skill icon',
+    title: 'Firebase',
   },
 ];
 
@@ -233,18 +254,7 @@ const Index4 = ({ workHistory }) => {
                   <h3>I’m A Skilled Engineer</h3>
                 </div>
                 <p>
-                  Boasting an impressive collection of certifications, my
-                  technical skills are both diverse and well-established. I hold
-                  certifications in JavaScript, Node.js, React.js, and MongoDB,
-                  demonstrating my profound knowledge of the MERN stack. Beyond
-                  these certifications, I am also well-versed in the latest web
-                  and mobile development techniques, software engineering best
-                  practices, and agile methodologies. My skills are complemented
-                  by my ability to design and implement efficient algorithms and
-                  data structures, perform code reviews, and debug complex
-                  issues. With a relentless commitment to continuous learning, I
-                  am perpetually honing my expertise to stay at the forefront of
-                  technological advancements.
+                  Demonstrating expertise in building full-stack web applications using the MERN stack (MongoDB, Express.js, React.js, Node.js). From designing robust back-end architectures and managing databases to crafting responsive and dynamic front-end user interfaces, I specialize in delivering seamless and scalable solutions. My projects highlight the integration of modern technologies to create efficient, user-centric applications
                 </p>
               </div>
             </div>

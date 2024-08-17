@@ -11738,6 +11738,10 @@ blockquote .blockquote-footer:before {
   }
 }
 
+.skill-item img {
+  max-width: 30px;
+}
+
 @media only screen and (max-width: 767px) {
   .skill-item img {
     max-width: 20px;
@@ -11746,7 +11750,7 @@ blockquote .blockquote-footer:before {
 
 .skill-item .text {
   color: #181818;
-  font-size: 20px;
+  font-size: 15px;
   font-weight: 600;
   margin-left: 15px;
 }
@@ -11769,6 +11773,8 @@ blockquote .blockquote-footer:before {
   background: var(--ygency-primary-color);
 }
 
+
+
 @media only screen and (max-width: 575px) {
   .my-skill-images {
     padding-left: 15px;
@@ -11785,9 +11791,17 @@ blockquote .blockquote-footer:before {
   border: 2px solid var(--ygency-dark-color);
 }
 
-@media only screen and (min-width: 768px) {
+
+@media only screen and (min-width: 1201px) {
   .my-skill-images .skill-item {
-    padding: 15px 28px;
+    padding: 15px 20px;
+  }
+}
+
+@media only screen and (max-width: 1200px) {
+  .my-skill-images .skill-item {
+    padding: 10px 15px;
+    margin: 0 5px 10px;
   }
 }
 
