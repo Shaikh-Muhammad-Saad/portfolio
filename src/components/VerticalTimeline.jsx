@@ -8,106 +8,83 @@ import {
 
 import 'react-vertical-timeline-component/style.min.css';
 
-const WorkVerticalTimeline = ({ timeline }) => {
+
+
+const timeline = [
+  {
+    "duration": "Jan 2023 - Present",
+    "title": "MERN Stack Developer",
+    "company": "TeamX Pakistan / TeamX Tec",
+    "place": "Dubai",
+    "description": "Developing large-scale web applications for UAE clients tailored to the UAE market, my responsibilities as a MERN Stack Developer include designing, building, and maintaining projects using Next.js, React.js, Nest.js, and MongoDB. I lead a team of 3 developers, ensuring seamless software integration and collaboration. My role involves close coordination with mobile developers for API integration, DevOps for efficient deployments, and SQA for continuous quality improvement. I also implement responsive UI/UX designs, develop RESTful APIs, optimize MongoDB schemas for high performance, and integrate third-party services to enhance application functionality.",
+    "education": false,
+    "linkText": "teamx.ae",
+    "link": "https://teamx.ae/",
+  },
+  {
+    "duration": "Nov 2021 - Jan 2023",
+    "title": "MERN Stack Developer",
+    "company": "Cognilium",
+    "place": "Pakistan",
+    "description": "My responsibilities as a MERN Stack Developer included designing and implementing web applications using MongoDB, Express.js, React.js, and Node.js. I developed RESTful APIs, managed database schemas, and created dynamic user interfaces. I led a team of 3 people, ensuring effective collaboration and successful project delivery. I worked closely with cross-functional teams to integrate frontend and backend components, optimized application performance, and resolved technical issues.",
+    "education": false,
+    "linkText": "Cognilium.ai",
+    "link": "https://cognilium.ai/",
+  },
+  {
+    "duration": "Sep 2020 - Oct 2021",
+    "title": "React Developer",
+    "company": "Softmeck",
+    "place": "Pakistan",
+    "description": "I developed and maintained web applications using React.js, Material UI, and Tailwind CSS. My role involved crafting responsive and visually engaging user interfaces and performing seamless API integrations to enhance application functionality. I successfully delivered tailored solutions that aligned with business needs and provided an exceptional user experience.",
+    "education": false,
+    "linkText": "Softmeck",
+    "link": "https://www.softmeck.com/",
+  },
+  {
+    "duration": "Feb 2018 - Mar 2022",
+    "title": "Bachelors in Software Engineer",
+    "company": "Iqra University",
+    "place": "Pakistan",
+    "description": "I earned my Bachelor's degree in Software Engineering in March 2022, where I developed a strong foundation in programming, software design, and engineering practices, equipping me with the skills needed to excel in the tech industry.",
+    "education": true,
+    "linkText": "education.iqra.edu.pk",
+    "link": "https://education.iqra.edu.pk/",
+  }
+]
+
+
+
+const WorkVerticalTimeline = () => {
+
+
   return (
+
     <VerticalTimeline>
-      {timeline
-        ?.sort((a, b) => a.order - b.order)
-        .map(({ fields: t }) => (
-          <VerticalTimelineElement
-            key={t?.title}
-            className='vertical-timeline-element--work'
-            contentStyle={{ background: '#3ba173', color: '#fff' }}
-            contentArrowStyle={{ borderRight: '7px solid  #3ba173' }}
-            date={t.duration}
-            iconStyle={{
-              background: t.education ? '#f1b000' : '#3ba173',
-              color: '#fff',
-            }}
-            icon={t.education ? <ImBook /> : <MdMapsHomeWork />}
-          >
-            <h3 className='vertical-timeline-element-title'>{t.title}</h3>
-            <h4 className='vertical-timeline-element-subtitle'>
-              {t.company}{' '}
-              <span style={{ fontWeight: 'lighter' }}>- {t.place}</span>
-            </h4>
-            <p>{t.description}</p>
-          </VerticalTimelineElement>
-        ))}
+      {timeline?.map((t) => (
+        <VerticalTimelineElement
+          key={t?.title}
+          className='vertical-timeline-element--work'
+          contentStyle={{ background: '#3ba173', color: '#fff' }}
+          contentArrowStyle={{ borderRight: '7px solid  #3ba173' }}
+          date={t?.duration}
+          iconStyle={{
+            background: t.education ? '#f1b000' : '#3ba173',
+            color: '#fff',
+          }}
+          icon={t?.education ? <ImBook /> : <MdMapsHomeWork />}
+        >
+          <h3 className='vertical-timeline-element-title'>{t?.title}</h3>
+          <h4 className='vertical-timeline-element-subtitle'>
+            {t?.company}{' '}
+            <span style={{ fontWeight: 'lighter' }}>- {t?.place}</span>
+          </h4>
+          <p className='comapny-link'><a href={t?.link} target='_blank'>{t?.linkText}</a></p>
+          <p>{t?.description}</p>
+        </VerticalTimelineElement>
+      ))}
     </VerticalTimeline>
   );
 };
-
-// const timeline = [
-//   {
-//     duration: 'JAN 2023 - PRESENT',
-//     title: 'Senior Solutions Engineer',
-//     company: 'Mazik Global',
-//     place: 'Karachi- Hybrid',
-//     icon: <MdMapsHomeWork />,
-//     description:
-//       'Building and maintaining web applications for large scale businesses. \n Managing and building multiple projects, with technologies like .NET MVC, .NET EF, React, MS Dynamics/CRM etc.',
-//   },
-//   {
-//     duration: 'JAN 2023 - JAN 2024',
-//     title: 'Software Engineer',
-//     company: 'Digital Dividend Pakistan',
-//     place: 'Karachi',
-//     icon: <MdMapsHomeWork />,
-//     description:
-//       'Managing and building multiple projects, primarily focusing on MERN stack but also using technologies like Laravel, Angular, and PostgreSQL.',
-//   },
-//   {
-//     duration: 'MAY 2022 - DEC 2022',
-//     title: 'MERN Stack Developer',
-//     company: 'TeamX Pakistan',
-//     place: 'Karachi',
-//     icon: <MdMapsHomeWork />,
-//     description:
-//       'Collaborating with clients and Project managers building in house products and client projects. \n Working on both Front-end and Back-end technologies like Next.js, React.js, MongoDB, Nest.js',
-//   },
-//   {
-//     duration: 'JUN 2021 - FEB 2022',
-//     title: 'React / React-native Engineer',
-//     company: 'Tecizeverything',
-//     place: 'Karachi',
-//     icon: <MdMapsHomeWork />,
-//     description:
-//       'Working on complex and data intensive applications like CRMs and Hotel management systems. \n Building fast and SEO friendly E-commerce applications with eye-catching interfaces using technologies like Next.js, TailwindCSS, Node.js etc.',
-//   },
-//   {
-//     duration: 'JUN 2021 - DEC 2022',
-//     title: 'React / Front-end Developer',
-//     company: 'AiMachines',
-//     place: 'Remote',
-//     icon: <MdMapsHomeWork />,
-//     description:
-//       'Frontend react development, worked on a product based on React.js application including API integrations, IndexedDB, Data-intensive application and more.',
-//   },
-//   {
-//     duration: 'NOV 2020 - JUN 2021',
-//     title: 'React-native Developer',
-//     company: 'Code4Client',
-//     place: 'Karachi',
-//     icon: <MdMapsHomeWork />,
-//     description: 'Mobile application development',
-//   },
-//   {
-//     duration: 'JAN 2020 - PRESENT',
-//     title: 'Bachelors in Software Engineer',
-//     company: 'University of Karachi',
-//     place: 'Karachi',
-//     icon: <ImBook />,
-//     education: true,
-//   },
-//   {
-//     duration: 'NOV 2020 - JUN 2021',
-//     title: 'Pre-engineering',
-//     company: 'DJ Sindh Govt. Science College',
-//     place: 'Karachi',
-//     icon: <ImBook />,
-//     education: true,
-//   },
-// ];
 
 export default WorkVerticalTimeline;

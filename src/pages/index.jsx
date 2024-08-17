@@ -18,23 +18,27 @@ const Counter = dynamic(() => import('../components/Counter'), {
 });
 
 const techList = [
+  'Javascript',
+  'Typescript',
+  'React Js',
+  'Next Js',
+  'Node Js',
+  'Express Js',
+  'Nest Js',
+  'Nest Js',
+  'MongoDB',
+  'Rest APIs',
+  'Docker',
+  'Ubuntu',
+  'NGINX',
+  'material UI',
+  'tailwind',
   'Sass',
   'HTML',
   'CSS',
-  'js',
-  'php',
-  'WordPress',
-  'javascript',
-  'Angular',
-  'Shopify',
 ];
 
 const techImages = [
-  {
-    src: 'assets/images/skills/skill4.png',
-    alt: 'Skill icon',
-    title: 'Javascript',
-  },
   {
     src: 'assets/images/skills/react.png',
     alt: 'Skill icon',
@@ -46,22 +50,6 @@ const techImages = [
     title: 'Next.js',
   },
   {
-    src: 'assets/images/skills/node.png',
-    alt: 'Skill icon',
-    title: 'Node.js',
-  },
-  {
-    src: 'assets/images/skills/typescript.png',
-    alt: 'Skill icon',
-    title: 'Typescript',
-  },
-
-  {
-    src: 'assets/images/skills/tailwind.png',
-    alt: 'Skill icon',
-    title: 'Tailwind',
-  },
-  {
     src: 'assets/images/skills/express.png',
     alt: 'Skill icon',
     title: 'Express.js',
@@ -70,6 +58,11 @@ const techImages = [
     src: 'assets/images/skills/nestjs.png',
     alt: 'Skill icon',
     title: 'Nest.js',
+  },
+  {
+    src: 'assets/images/skills/node.png',
+    alt: 'Skill icon',
+    title: 'Node.js',
   },
   {
     src: 'assets/images/skills/mongodb.png',
@@ -97,9 +90,24 @@ const techImages = [
     title: 'AWS EC2',
   },
   {
-    src: 'assets/images/skills/materialUI.png',
+    src: 'assets/images/skills/prisma.png',
     alt: 'Skill icon',
-    title: 'Material UI',
+    title: 'Prisma',
+  },
+  {
+    src: 'assets/images/skills/ubuntu.png',
+    alt: 'Skill icon',
+    title: 'Ubuntu',
+  },
+  {
+    src: 'assets/images/skills/nginx.png',
+    alt: 'Skill icon',
+    title: 'NGINX',
+  },
+  {
+    src: 'assets/images/skills/firebase.png',
+    alt: 'Skill icon',
+    title: 'Firebase',
   },
   {
     src: 'assets/images/skills/mongoose.png',
@@ -107,14 +115,24 @@ const techImages = [
     title: 'Mongoose',
   },
   {
-    src: 'assets/images/skills/prisma.png',
+    src: 'assets/images/skills/tailwind.png',
     alt: 'Skill icon',
-    title: 'Prisma',
+    title: 'Tailwind',
   },
   {
-    src: 'assets/images/skills/firebase.png',
+    src: 'assets/images/skills/materialUI.png',
     alt: 'Skill icon',
-    title: 'Firebase',
+    title: 'Material UI',
+  },
+  {
+    src: 'assets/images/skills/typescript.png',
+    alt: 'Skill icon',
+    title: 'Typescript',
+  },
+  {
+    src: 'assets/images/skills/skill4.png',
+    alt: 'Skill icon',
+    title: 'Javascript',
   },
 ];
 
@@ -303,7 +321,7 @@ const Index4 = ({ workHistory }) => {
             </div>
           </div>
         </div>
-        <WorkVerticalTimeline timeline={workHistory} />
+        <WorkVerticalTimeline />
       </section>
       {/* Work History End */}
 
@@ -342,10 +360,11 @@ const Index4 = ({ workHistory }) => {
           </div>
         </div>
       </div>
-
-
-
       {/* Headline Area end */}
+
+
+
+
       {/* Our Awards Area start */}
       <section
         id='education'
@@ -355,8 +374,8 @@ const Index4 = ({ workHistory }) => {
           <div className='row align-items-end pb-35'>
             <div className='col-lg-8'>
               <div className='section-title mb-30 wow fadeInUp delay-0-2s'>
-                <span className='sub-title mb-15'>My Certifications</span>
-                <h2>My Related Certifications</h2>
+                <span className='sub-title mb-15'>My Education</span>
+                <h2>Related Education</h2>
               </div>
             </div>
           </div>
@@ -372,7 +391,7 @@ const Index4 = ({ workHistory }) => {
                     >
                       <div>
                         <img
-                          src='assets/images/about/smit.jpeg'
+                          src='assets/images/about/degree.jpg'
                           alt='usama irfan saylani mass it certification software engineer'
                         />
                       </div>
@@ -411,37 +430,26 @@ const Index4 = ({ workHistory }) => {
                   >
                     <span className='left'>
                       <span className='h3'>
-                        Web And Mobile Hybrid App Development
+                        Bachelors in Software Engineering
                       </span>
                       <span className='award-type'>
-                        SAYLANI MASS IT TRAINING
+                        IQRA UNIVERSITY
                       </span>
                     </span>
                   </Nav.Link>
-                  <Nav.Link
+                  <div
                     as='button'
                     className='nav-link'
                     eventKey='awards-tab-two'
                   >
                     <span className='left'>
-                      <span className='h3'>
-                        The Complete Web Development 2.0
-                      </span>
-                      <span className='award-type'>UDEMY</span>
-                    </span>
-                  </Nav.Link>
-                  <Nav.Link
-                    as='button'
-                    className='nav-link'
-                    eventKey='awards-tab-three'
-                  >
-                    <span className='left'>
-                      <span className='h3'>NDG Linux Essentials Course</span>
+
                       <span className='award-type'>
-                        CISCO NETWORKING ACADEMY
+                        I earned my Bachelor's degree in Software Engineering in March 2022, where I developed a strong foundation in programming, software design, and engineering practices, equipping me with the skills needed to excel in the tech industry.
                       </span>
                     </span>
-                  </Nav.Link>
+                  </div>
+
                 </Nav>
               </div>
             </Tab.Container>
@@ -449,58 +457,11 @@ const Index4 = ({ workHistory }) => {
         </div>
       </section>
       {/* Our Awards Area end */}
-      {/* CTA Area start */}
-      <div className='cta-area bgc-primary pt-30 mb-100 pb-15 rel z-1'>
-        <div className='container'>
-          <div className='cta-wrap'>
-            <h4>I&rsquo;m available for freelance work</h4>
-            <Link
-              legacyBehavior
-              href='https://www.upwork.com/freelancers/~01641333f94bdccc85'
-              target='_blank'
-            >
-              <a className='theme-btn'>
-                Hire Me <i className='far fa-arrow-right' />
-              </a>
-            </Link>
-          </div>
-        </div>
-        <div className='cta-shapes'>
-          <img
-            className='shape one'
-            src='assets/images/shapes/circle.png'
-            alt='Circle'
-          />
-          <img
-            className='shape two'
-            src='assets/images/shapes/close.png'
-            alt='Close'
-          />
-          <img
-            className='shape three'
-            src='assets/images/shapes/weve-lines.png'
-            alt='Weve Line'
-          />
-          <img
-            className='shape four'
-            src='assets/images/shapes/circle.png'
-            alt='Circle'
-          />
-          <img
-            className='shape five'
-            src='assets/images/shapes/close.png'
-            alt='Close'
-          />
-          <img
-            className='shape six'
-            src='assets/images/shapes/weve-lines.png'
-            alt='Weve Line'
-          />
-        </div>
-      </div>
 
 
-      {/* CTA Area end */}
+
+
+
       {/* Drop Me Area start */}
       <section id='contact' className='drop-me-area'>
         <div className='container container-1290'>
@@ -531,6 +492,10 @@ const Index4 = ({ workHistory }) => {
         </div>
       </section>
       {/* Drop Me Area end */}
+
+
+
+
       {/* Headline area start */}
       <div className='headline-area rel z-1 move-top-two'>
         <div className='container-fluid'>
@@ -542,24 +507,12 @@ const Index4 = ({ workHistory }) => {
         </div>
       </div>
       {/* Headline Area end */}
+
+
     </Layout>
   );
 };
 
-export async function getStaticProps() {
-  const response = await contentClient.getWorkHistory();
 
-  response.items.forEach((i) => delete i.fields?.related);
-
-  return {
-    props: {
-      workHistory: response.items,
-    },
-    // Next.js will attempt to re-generate the page:
-    // - When a request comes in
-    // - At most once every 10 seconds
-    revalidate: 360, // In seconds
-  };
-}
 
 export default Index4;

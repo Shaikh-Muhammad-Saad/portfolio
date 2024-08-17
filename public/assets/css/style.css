@@ -13060,3 +13060,11 @@ blockquote .blockquote-footer:before {
 .footer-five .footer-info .list-style-two li a:hover {
   font-size: 24px;
 }
+
+
+.comapny-link {
+  padding: 0px !important;
+  margin: 0px !important;
+  cursor: pointer;
+  text-decoration: underline;
+}
