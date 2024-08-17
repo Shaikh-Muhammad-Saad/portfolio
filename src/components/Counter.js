@@ -24,4 +24,5 @@ const Counter = ({ end, decimals, extraClass }) => {
   );
 };
 
+
 export default Counter;
