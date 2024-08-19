@@ -438,14 +438,14 @@ const Index4 = ({ workHistory }) => {
                     </span>
                   </Nav.Link>
                   <div
-                    as='button'
+                    // as='button'
                     className='nav-link'
-                    eventKey='awards-tab-two'
+                  // eventKey='awards-tab-two'
                   >
                     <span className='left'>
 
                       <span className='award-type'>
-                        I earned my Bachelor's degree in Software Engineering in March 2022, where I developed a strong foundation in programming, software design, and engineering practices, equipping me with the skills needed to excel in the tech industry.
+                        I earned my Bachelors degree in Software Engineering in March 2022, where I developed a strong foundation in programming, software design, and engineering practices, equipping me with the skills needed to excel in the tech industry.
                       </span>
                     </span>
                   </div>

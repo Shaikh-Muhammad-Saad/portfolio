@@ -31,7 +31,7 @@ const Footer4 = () => {
                 <ul className='list-style-two'>
 
                   <li>
-                    <a href='https://www.linkedin.com/in/shaikh-muhammad-saad-7926a5207' target='_blank'>
+                    <a href='https://www.linkedin.com/in/shaikh-muhammad-saad-7926a5207' target='_blank' rel="noreferrer" >
                       LinkedIn
                     </a>
                   </li>

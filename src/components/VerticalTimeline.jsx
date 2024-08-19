@@ -79,7 +79,7 @@ const WorkVerticalTimeline = () => {
             {t?.company}{' '}
             <span style={{ fontWeight: 'lighter' }}>- {t?.place}</span>
           </h4>
-          <p className='comapny-link'><a href={t?.link} target='_blank'>{t?.linkText}</a></p>
+          <p className='comapny-link'><a href={t?.link} target='_blank' rel="noreferrer" >{t?.linkText}</a></p>
           <p>{t?.description}</p>
         </VerticalTimelineElement>
       ))}
