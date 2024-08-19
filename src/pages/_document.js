@@ -6,6 +6,11 @@ export default function Document() {
   return (
     <Html lang='en'>
       <Head>
+        {/* Favicon */}
+        <link rel='icon' href='/assets/images/favicon.svg' />
+        {/* <link rel='shortcut icon' href='/images/usamairfan-softwarengineer.png' /> */}
+        {/* <link rel='shortcut icon' href='https://images.pexels.com/photos/56866/garden-rose-red-pink-56866.jpeg?auto=compress&cs=tinysrgb&w=600' /> */}
+
         {/* Google Fonts */}
         <link
           href='https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap'

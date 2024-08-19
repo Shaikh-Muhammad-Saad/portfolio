@@ -17,9 +17,11 @@ const Footer4 = () => {
               </div>
               <div className='social-style-four'>
                 <li>
-                  <Link legacyBehavior href='/'>
-                    <a>Home</a>
-                  </Link>
+                  <div className=''>
+                    <p>Location: &nbsp; Karachi, Pakistan</p>
+                    <p>Phone: &nbsp; +92 3332311978</p>
+                    <p>E-mail: &nbsp; smsidrees@gmail.com</p>
+                  </div>
                 </li>
               </div>
             </div>
@@ -49,13 +51,20 @@ const Footer4 = () => {
           <p>
             Copyright @2023,{' '}
             <Link legacyBehavior href='/'>
-              <a>Usama Irfan</a>
+              <a>Shaikh Muhammad Saad</a>
             </Link>{' '}
             All Rights Reserved
           </p>
         </div>
       </div>
+
+
+
+
     </footer>
+
+
+
   );
 };
 export default Footer4;

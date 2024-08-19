@@ -430,7 +430,7 @@ const Index4 = ({ workHistory }) => {
                   >
                     <span className='left'>
                       <span className='h3'>
-                        Bachelors in Software Engineering
+                        Bachelor&rsquo;s in Software Engineering
                       </span>
                       <span className='award-type'>
                         IQRA UNIVERSITY
@@ -445,7 +445,7 @@ const Index4 = ({ workHistory }) => {
                     <span className='left'>
 
                       <span className='award-type'>
-                        I earned my Bachelors degree in Software Engineering in March 2022, where I developed a strong foundation in programming, software design, and engineering practices, equipping me with the skills needed to excel in the tech industry.
+                        I earned my Bachelor&rsquo;s degree in Software Engineering in March 2022, where I developed a strong foundation in programming, software design, and engineering practices, equipping me with the skills needed to excel in the tech industry.
                       </span>
                     </span>
                   </div>
@@ -507,6 +507,8 @@ const Index4 = ({ workHistory }) => {
         </div>
       </div>
       {/* Headline Area end */}
+
+
 
 
     </Layout>
