@@ -262,7 +262,7 @@ const Index4 = ({ workHistory }) => {
 
 
       {/* Service Box start */}
-      <section className='service-section pt-130 rpt-100 pb-100 rpb-70'></section>
+      <section className='service-section pt-30 rpt-100 pb-30 rpb-70'></section>
       {/* Service Box end */}
 
 
