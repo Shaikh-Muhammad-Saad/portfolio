@@ -57,8 +57,8 @@ const getMessage = (name, email, message, phone) => {
   <body>
       <h1>New Lead Submission from website - ${name}</h1>
       <p>
-          Hello Usama Irfan,
-              A new potential customer has contacted through the website. Please get in touch with the customer ASAP.
+          Hello Shaikh Muhammad Saad,
+              Someone has contacted you through your portfolio website.
       </p>
       <h4>Email: </h4>
       <blockquote>
@@ -72,7 +72,7 @@ const getMessage = (name, email, message, phone) => {
       <blockquote>
           ${message}
       </blockquote>
-      <p>Regards,<br />Team Usama Irfan</p>
+      <p>Regards,<br />Saad</p>
       <p><small>This is an auto-generated email on submission of contact form on the Usama Irfan website.</small></p>
   </body>
   
@@ -90,12 +90,11 @@ apiRoute.use(multer().none());
 apiRoute.post((req, res) => {
   // * Email configuration from environment variables
   const config = {
-    host: process.env.NEXT_PUBLIC_EMAIL_HOST,
-    secure: false, // ! Not using SSL/TLS
+    service: 'yahoo',
     auth: {
-      user: process.env.NEXT_PUBLIC_EMAIL_SENDER_EMAIL,
-      pass: process.env.NEXT_PUBLIC_EMAIL_SENDER_PASSWORD,
-    },
+      user: 'ssidrees@yahoo.com',
+      pass: 'goirmffaeiwbdtbf' // ssidrees@yahoo.com yahoo app-password
+    }
   };
   const transporter = createTransport(config); // * Initialize email transporter
 
@@ -103,8 +102,8 @@ apiRoute.post((req, res) => {
 
   // * Configure email details
   const ownerMessage = {
-    from: process.env.NEXT_PUBLIC_EMAIL_SENDER_REPLY_TO,
-    to: process.env.NEXT_PUBLIC_EMAIL_SEND_TO,
+    from: 'ssidrees@yahoo.com',
+    to: 'smsidrees@gmail.com',
     subject: fields?.subject ?? 'New Website Lead',
     text: fields?.message,
     html: getMessage(
