@@ -136,6 +136,8 @@ const techImages = [
   },
 ];
 
+
+
 const Index4 = ({ workHistory }) => {
   return (
     <Layout header={2} footer={4}>
@@ -149,58 +151,9 @@ const Index4 = ({ workHistory }) => {
         <div className='container'>
           <h1 className='hero-title  wow fadeInUp delay-0-2s'>
             Shaikh Muhammad Saad
-            {/* <br /> */}
-            {/* <span className='arrow'>
-              <img
-                className='wow fadeInLeft delay-0-6s'
-                src='assets/images/hero/title-arrow.png'
-                alt='Arrow'
-              />
-            </span>
-            Software Engineer */}
-
             <br />
             Software Engineer
           </h1>
-          {/* <div className='row align-items-center justify-content-between'>
-            <div className='col-xl-3 col-lg-4'>
-              <div className='hero-two-content mb-50 wow fadeInRight delay-0-2s'>
-                <p>
-                  I am a dedicated Software Engineer with over three years of
-                  experience in web and mobile development. With a strong
-                  command of the MERN stack (MongoDB, Express.js, React.js, and
-                  Node.js) / React-native, I am skilled at crafting efficient,
-                  robust, and user-friendly digital solutions.
-                </p>
-                <img
-                  className='mt-20'
-                  src='assets/images/hero/arrow.png'
-                  alt='Arrow'
-                />
-              </div>
-            </div>
-            <div className='col-lg-6'>
-              <div className='hero-two-image position-relative mb-50 wow zoomIn delay-0-2s'>
-                <Image
-                  width={800}
-                  height={500}
-                  style={{ objectFit: 'contain' }}
-                  src='/assets/images/hero/usamairfangit.jpeg'
-                  alt='Hero'
-                />
-              </div>
-            </div>
-            <div className='col-lg-2'>
-              <div className='hero-two-btn mb-50 wow fadeInLeft delay-0-2s'>
-                <Link legacyBehavior href='#projects'>
-                  <a className='explore-more'>
-                    <i className='fas fa-arrow-right' />{' '}
-                    <span>Explore more</span>
-                  </a>
-                </Link>
-              </div>
-            </div>
-          </div> */}
         </div>
       </section>
       {/* Hero Section End */}
@@ -242,7 +195,11 @@ const Index4 = ({ workHistory }) => {
                 </div>
                 <div className='col-lg-6'>
                   <div className='about-four-image wow fadeInUp delay-0-4s'>
-                    <img src='assets/images/about/me.png' alt='About' />
+                    <img
+                      src='/assets/images/about/me.png'
+                      alt='Me'
+                      loading="lazy" // Lazy loading enabled
+                    />
                   </div>
                 </div>
               </div>
@@ -280,7 +237,7 @@ const Index4 = ({ workHistory }) => {
               <div className='my-skill-images wow fadeInRight delay-0-2s'>
                 {techImages?.map((t) => (
                   <div key={t?.src} className='skill-item'>
-                    <img src={t?.src} alt={t?.alt} />
+                    <img src={t?.src} alt={t?.alt} loading="lazy" />
                     <span className='text'>{t?.title}</span>
                   </div>
                 ))}
@@ -461,33 +418,61 @@ const Index4 = ({ workHistory }) => {
 
 
 
-
       {/* Drop Me Area start */}
-      <section id='contact' className='drop-me-area'>
+      <section id='contact' className='drop-me-area'
+        style={{ paddingTop: "100px" }}
+      >
         <div className='container container-1290'>
-          <div className='row align-items-center justify-content-center justify-content-lg-between'>
+          <div className='row align-items-start justify-content-start justify-content-lg-between'>
+
+
+            <div className='col-xl-5 col-lg-6 col-md-8 col-sm-10'>
+              <div className="col-lg-12">
+                <div className="our-location-part rmb-55 wow fadeInUp delay-0-2s">
+                  <div className="row">
+                    <div className="col-xl-10">
+                      <div className="section-title mb-60">
+                        <span className="sub-title mb-15">Contact</span>
+                        <h2>Contact Me</h2>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="row gap-80 pb-30">
+
+                    <div className="col-sm-12">
+                      <div className="our-location-address mb-40">
+                        <h5>Dubai, UAE</h5>
+                        <p>
+                          55 One State Road, 2nd Block New York, United States
+                        </p>
+                        <a className="callto" href="mailto:support@gmail.com">
+                          <i className="fas fa-envelope" /> smsidrees@gmail.com
+                        </a>
+                        <br />
+                        <a className="callto" href="callto:+00012345688">
+                          <i className="fas fa-phone" /> +971 3332311978
+                        </a>
+                        <br />
+                        <a className="callto" href="callto:+00012345688">
+                          <i className="fas fa-phone" /> +92 3332311978
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
             <div className='col-lg-6'>
               <div className='drop-me-form-part rmb-50 wow fadeInLeft delay-0-2s'>
                 <div className='section-title mb-40'>
-                  <span className='sub-title mb-20'>Drop Me A Line</span>
+                  <span className='sub-title mb-20'>Drop Me A Message</span>
                   <h2>Let&rsquo;s Get In Touch</h2>
                 </div>
                 <ContactForm1 />
               </div>
             </div>
-            <div className='col-xl-5 col-lg-6 col-md-8 col-sm-10'>
-              <div className='drop-me-image-part wow fadeInRight delay-0-2s position-relative'>
-                <div className='text-center position-relative'>
-                  <Image
-                    width={500}
-                    height={500}
-                    objectFit='contain'
-                    src={ContactFormSvg}
-                    alt='contact usama irfan email me software engineer'
-                  />
-                </div>
-              </div>
-            </div>
+
           </div>
         </div>
       </section>

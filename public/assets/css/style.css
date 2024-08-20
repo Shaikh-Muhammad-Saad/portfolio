@@ -8725,6 +8725,7 @@ blockquote .blockquote-footer:before {
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;
   display: inline-flex;
+  margin-bottom: 10px !important;
 }
 
 .our-location-address .callto i {
@@ -12998,7 +12999,7 @@ blockquote .blockquote-footer:before {
 
 /* Footer Four */
 .footer-four .social-style-four {
-  margin-left: -15px;
+  margin-left: 15px;
   margin-right: -15px;
 }
 

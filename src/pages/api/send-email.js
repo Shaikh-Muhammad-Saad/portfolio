@@ -104,7 +104,7 @@ apiRoute.post((req, res) => {
   const ownerMessage = {
     from: 'ssidrees@yahoo.com',
     to: 'smsidrees@gmail.com',
-    subject: fields?.subject ?? 'New Website Lead',
+    subject: fields?.subject ?? 'My Portfolio Website Message',
     text: fields?.message,
     html: getMessage(
       fields?.name ?? fields?.email,
