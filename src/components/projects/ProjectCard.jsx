@@ -7,7 +7,7 @@ const ProjectCard = ({ project }) => {
     <>
       <div className='image'>
         <img
-          src={projectImage?.fields?.file?.url}
+          src={projectImage}
           alt='Work Gallery'
           style={{ width: '100%', height: '100%', objectFit: 'cover' }}
         />

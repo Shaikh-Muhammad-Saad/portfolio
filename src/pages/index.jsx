@@ -7,7 +7,7 @@ import { Nav, Tab } from 'react-bootstrap';
 import ContactFormSvg from '@/src/assets/svgs/contact.svg';
 
 import ContactForm1 from '../components/ContactForm1';
-import ProjectsSlider from '../components/projects/ProjectsSlider';
+// import ProjectsSlider from '../components/projects/ProjectsSlider';
 import SEOWrapper from '../components/SEOWrapper';
 import WorkVerticalTimeline from '../components/VerticalTimeline';
 import contentClient from '../contentful/client';
@@ -16,6 +16,8 @@ import Layout from '../layout/Layout';
 const Counter = dynamic(() => import('../components/Counter'), {
   ssr: false,
 });
+
+const ProjectsSlider = dynamic(() => import('../components/projects/ProjectsSlider'), { ssr: true });
 
 const techList = [
   'Javascript',

@@ -4,20 +4,23 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import ProjectCard from './ProjectCard';
 import contentClient from '../../../src/contentful/client';
 import { sliderProps } from '../../../src/helpers/sliderProps';
+import projects from './project-slider-list';
+
+
 
 const ProjectsSlider = () => {
-  const [projects, setProjects] = useState([]);
+  // const [projects, setProjects] = useState([]);
 
-  const getProjects = async () => {
-    const response = await contentClient.getProjects();
-    if (response) {
-      setProjects(response?.items);
-    }
-  };
+  // const getProjects = async () => {
+  //   const response = await contentClient.getProjects();
+  //   if (response) {
+  //     setProjects(response?.items);
+  //   }
+  // };
 
-  useEffect(() => {
-    getProjects();
-  }, []);
+  // useEffect(() => {
+  //   getProjects();
+  // }, []);
 
   return (
     <section id='projects' className='work-gallery-area pb-130 rpb-100'>
@@ -39,11 +42,18 @@ const ProjectsSlider = () => {
           className='work-gallery-active'
         >
           {projects?.map((p) => (
+            //   <SwiperSlide
+            //     key={p?.sys?.id}
+            //     className='project-item style-four wow fadeInUp delay-0-2s'
+            //   >
+            //     <ProjectCard project={p?.fields} />
+            //   </SwiperSlide>
+            // ))}
             <SwiperSlide
-              key={p?.sys?.id}
+              key={p?.id}
               className='project-item style-four wow fadeInUp delay-0-2s'
             >
-              <ProjectCard project={p?.fields} />
+              <ProjectCard project={p?.project} />
             </SwiperSlide>
           ))}
         </Swiper>
