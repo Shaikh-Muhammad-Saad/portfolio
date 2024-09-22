@@ -49,8 +49,44 @@ const projects = [
         project: {
             title: "Adroit Solutions",
             projectImage: "https://res.cloudinary.com/dh7kygocu/image/upload/v1726930392/adroit%20website/pb5rt1n3uzmpijxs1ntp.png",
-            subTitle: "Adroit Company Web",
+            subTitle: "Adroit Solutions Company Web",
             slug: "Adroit"
+        }
+    },
+    {
+        id: 7,
+        project: {
+            title: "Bakatheer",
+            projectImage: "https://res.cloudinary.com/dh7kygocu/image/upload/v1726931374/bakatheer/ybupwmydxppfr64ovsez.png",
+            subTitle: "Bakatheer Blog / Artical Application",
+            slug: "bsakatheer"
+        }
+    },
+    {
+        id: 8,
+        project: {
+            title: "In Abu Dhabi",
+            projectImage: "https://res.cloudinary.com/dh7kygocu/image/upload/v1726963057/in%20abu%20dhabi/skso0kj4n14fzh30x3zs.png",
+            subTitle: "Events Management/Booking, Work Space Booking and Artists",
+            slug: "in-abu-dhabi"
+        }
+    },
+    {
+        id: 9,
+        project: {
+            title: "Maria Foods",
+            projectImage: "https://res.cloudinary.com/dh7kygocu/image/upload/v1726963538/maria%20foods/ial9z54rnbffxkhlm5st.png",
+            subTitle: "E-Commerce",
+            slug: "maria-foods"
+        }
+    },
+    {
+        id: 10,
+        project: {
+            title: "Oud Royal",
+            projectImage: "https://res.cloudinary.com/dh7kygocu/image/upload/v1726963798/oud%20royal/fj1cxgmzh55i1kay00xg.png",
+            subTitle: "E-Commerce",
+            slug: "oud-royal"
         }
     },
 ]
