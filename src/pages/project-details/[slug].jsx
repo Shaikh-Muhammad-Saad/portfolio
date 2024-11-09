@@ -38,24 +38,18 @@ const imagesList = [
 
 
 const ProjectDetails = ({ project }) => {
-  const {
-    startDate,
-    projectText,
-    category,
-    title,
-    resultText,
-    client,
-    bannerImage,
-    challengeText,
-    mobileImages,
-  } = project ? project.fields : {};
-  const text = documentToPlainTextString(projectText);
+
+  const text = documentToPlainTextString("Saad Project Text");
+  const title = "Main Title";
+  const bannerImage = "https://res.cloudinary.com/dh7kygocu/image/upload/v1726927958/hatly%20images/g3brp3htl2fpufstbva2.jpg";
+
+
   return (
     <Layout header={2} footer={4}>
       <SEOWrapper
         title={title}
         description={text?.length > 160 ? text?.slice(0, 160) : text}
-        image={bannerImage?.fields?.file?.url}
+        image={bannerImage}
       />
       <section
         className='page-banner pt-210 rpt-150 pb-75 rel z-1'
@@ -76,109 +70,70 @@ const ProjectDetails = ({ project }) => {
           </div>
         </div>
       </section>
-      {bannerImage ? (
-        <div className='project-details-image rel z-1'>
-          <div className='container-fluid'>
-            <div className='image wow fadeInUp delay-0-2s'>
-              <img
-                style={{
-                  width: '100%',
-                  height: '100%',
-                  objectFit: 'contain',
-                  objectPosition: 'center',
-                }}
-                src={bannerImage?.fields?.file?.url}
-                alt='Project'
-              />
-            </div>
+
+      <div className='project-details-image rel z-1'>
+        <div className='container-fluid'>
+          <div className='image wow fadeInUp delay-0-2s'>
+            <img
+              style={{
+                width: '100%',
+                height: '100%',
+                objectFit: 'contain',
+                objectPosition: 'center',
+              }}
+              src={bannerImage}
+              alt='Project'
+            />
           </div>
         </div>
-      ) : null}
+      </div>
+
       <section className='project-details-area pt-80 rel z-1'>
         <div className='container container-1290'>
           <div className='row pb-35 wow fadeInUp delay-0-2s'>
             <div className='col-lg-4'>
-              <h3 className='title mb-30'>Project Information&rsquo;s</h3>
+              <h3 className='title mb-30'>Project Information</h3>
             </div>
-            <div className='col-lg-8'>
-              <div className='row row-cols-lg-3 row-cols-sm-2 row-cols-1'>
-                <div className='col'>
+
+            <div className=''>
+              <div className=''>
+
+                <div className=''>
+                  <p className='sub-title mb-0'>E-commerce Multi Vendor, Super Mart & Rider App</p>
+                  <a className='sub-title mb-0' style={{ color: "#55E6A5" }}>www.hatly.ae</a>
+                </div>
+
+                {/* <div className=''>
                   <h5>Client</h5>
-                  <p className='sub-title mb-20'>{client ?? 'Confidential'}</p>
+                  <p className='sub-title mb-20'>{'Confidential'}</p>
                 </div>
-                <div className='col'>
+
+                <div className=''>
                   <h5>Category</h5>
-                  <p className='sub-title mb-20'>{category ?? 'No Category'}</p>
-                </div>
-                <div className='col'>
-                  <h5>Date</h5>
-                  <p className='sub-title mb-20'>
-                    {startDate ? moment(startDate).format('ll') : 'No Date'}
-                  </p>
-                </div>
+                  <p className='sub-title mb-20'>Full Stack Development</p>
+                </div> */}
+
               </div>
             </div>
           </div>
+
           <hr />
-          {challengeText ? (
-            <div className='row pt-50 pb-70 wow fadeInUp delay-0-2s'>
-              <div className='col-lg-4'>
-                <h3 className='title mb-30'>The Challenge</h3>
-              </div>
-              <div className='col-lg-8'>
-                <div className='big-letter text'>
-                  {documentToReactComponents(challengeText)}
-                </div>
+
+          <div className='row pt-50 pb-70 wow fadeInUp delay-0-2s'>
+            <div className='col-lg-4'>
+              <h3 className='title mb-30'>More About The Project</h3>
+            </div>
+            <div className='col-lg-8'>
+              <div className='big-letter text'>
+                saad
               </div>
             </div>
-          ) : null}
-          {projectText ? (
-            <div className='row pt-50 pb-70 wow fadeInUp delay-0-2s'>
-              <div className='col-lg-4'>
-                <h3 className='title mb-30'>More About The Project</h3>
-              </div>
-              <div className='col-lg-8'>
-                <div className='big-letter text'>
-                  {documentToReactComponents(projectText)}
-                </div>
-              </div>
-            </div>
-          ) : null}
-
-
-
-          {mobileImages ? (
-            <>
-              <div className='row'>
-                {mobileImages?.map((m) => (
-                  <div key={m?.sys?.id} className='col-6 col-lg-3'>
-                    <div className='image mb-30 wow fadeInUp delay-0-2s'>
-                      <img src={m?.fields?.file?.url} alt='Project' />
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </>
-          ) : null}
-
+          </div>
 
 
           <ProjectsPaginatedContainer imagesList={imagesList} />
 
 
-
-          {resultText ? (
-            <div className='row pt-40 pb-105 rpb-80 wow fadeInUp delay-0-2s'>
-              <div className='col-lg-4'>
-                <h3 className='title mb-30'>The Results</h3>
-              </div>
-              <div className='col-lg-8'>
-                <div className='text'>
-                  {documentToReactComponents(resultText)}
-                </div>
-              </div>
-            </div>
-          ) : null}
           <hr />
         </div>
       </section>

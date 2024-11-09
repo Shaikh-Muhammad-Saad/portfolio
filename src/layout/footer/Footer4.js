@@ -13,7 +13,7 @@ const Footer4 = () => {
           <div className='col-lg-5'>
             <div className='footer-widget footer-about wow fadeInUp delay-0-2s'>
               <div className='section-title mb-30'>
-                <h2>Shaikh Muhammad</h2>
+                <h4>Shaikh Muhammad Saad</h4>
               </div>
               <div className='social-style-four'>
                 <li>

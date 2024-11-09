@@ -443,23 +443,24 @@ const Index4 = ({ workHistory }) => {
 
                     <div className="col-sm-12">
                       <div className="our-location-address mb-40">
-                        <h5>Dubai, UAE</h5>
+                        <h5>Karachi, Pakistan</h5>
                         <p>
-                          55 One State Road, 2nd Block New York, United States
+                          Gulshan-e-Iqbal Block 13D, Karachi.
                         </p>
                         <a className="callto" href="mailto:support@gmail.com">
                           <i className="fas fa-envelope" /> smsidrees@gmail.com
                         </a>
                         <br />
-                        <a className="callto" href="callto:+00012345688">
+                        {/* <a className="callto" href="callto:+00012345688">
                           <i className="fas fa-phone" /> +971 3332311978
                         </a>
-                        <br />
+                        <br /> */}
                         <a className="callto" href="callto:+00012345688">
                           <i className="fas fa-phone" /> +92 3332311978
                         </a>
                       </div>
                     </div>
+
                   </div>
                 </div>
               </div>
