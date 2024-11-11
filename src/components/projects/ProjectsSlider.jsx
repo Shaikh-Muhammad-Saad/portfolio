@@ -1,8 +1,7 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
 import ProjectCard from './ProjectCard';
-import contentClient from '../../../src/contentful/client';
 import { sliderProps } from '../../../src/helpers/sliderProps';
 import projects from './project-slider-list';
 

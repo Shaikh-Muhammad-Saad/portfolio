@@ -41,7 +41,7 @@ const projects = [
             title: "Zues Multi Vendor",
             projectImage: "https://res.cloudinary.com/dh7kygocu/image/upload/v1726928467/zues-admin-panel/gk5bzcsljmh9jer2xshi.jpg",
             subTitle: "E-commerce Multi Vendor / Broker App",
-            slug: "zues-multi-vendor-app"
+            slug: "zues-multi-vendor"
         }
     },
     {
@@ -59,7 +59,7 @@ const projects = [
             title: "Bakatheer",
             projectImage: "https://res.cloudinary.com/dh7kygocu/image/upload/v1726931374/bakatheer/ybupwmydxppfr64ovsez.png",
             subTitle: "Bakatheer Blog / Artical Application",
-            slug: "bsakatheer"
+            slug: "bakatheer"
         }
     },
     {

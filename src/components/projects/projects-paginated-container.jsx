@@ -13,6 +13,7 @@ const ProjectsPaginatedContainer = ({ imagesList }) => {
     const [selectedImage, setSelectedImage] = useState(null);
 
     const itemsPerPage = 10;
+    // const itemsPerPage = 100;
 
 
     const scrollToSection = (section) => {
@@ -64,7 +65,7 @@ const ProjectsPaginatedContainer = ({ imagesList }) => {
 
                         {currentItems.map((src, index) => (
                             <div key={index} className="col-lg-6 col-md-12 " onClick={() => setSelectedImage({ imgIndex: index })}>
-                                <div className=" wow fadeInUp delay-0-4s">
+                                <div className=" wow fadeInUp delay-0-3s">
                                     <div className="image-container">
                                         <img className="img-fluid" src={src} alt="Blog" />
                                     </div>
@@ -118,8 +119,6 @@ const ProjectsPaginatedContainer = ({ imagesList }) => {
                                 </li>
                             </ul>
                         </div>
-
-
 
 
 
