@@ -12,13 +12,14 @@ const ProjectsPaginatedContainer = ({ imagesList }) => {
     const [currentPage, setCurrentPage] = useState(1);
     const [selectedImage, setSelectedImage] = useState(null);
 
-    const itemsPerPage = 10;
-    // const itemsPerPage = 100;
+    // const itemsPerPage = 10;
+    const itemsPerPage = 100;
+    // const itemsPerPage = 20;
 
 
     const scrollToSection = (section) => {
         scroller.scrollTo(section, {
-            duration: 800,
+            duration: 0,
             delay: 0,
             smooth: 'easeInOutQuart'
         });

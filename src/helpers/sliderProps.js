@@ -37,7 +37,7 @@ export const sliderProps = {
     dots: false,
     focusOnSelect: true,
     autoplay: true,
-    autoplaySpeed: 5000,
+    autoplaySpeed: 1000,
   },
   galleryFiveActive: {
     loop: true,
