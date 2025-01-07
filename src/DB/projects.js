@@ -175,5 +175,67 @@ export const projectDetailsList = [
             "https://res.cloudinary.com/dh7kygocu/image/upload/v1722434703/zues-store-front-images/bhhcfazq0nuuomcozowk.png",
             "https://res.cloudinary.com/dh7kygocu/image/upload/v1722434703/zues-store-front-images/vjuqeywrhk5awrmanssv.png",
         ]
+    },
+    {
+        name: "Maria Foods",
+        slug: "maria-foods",
+        info: "E-Commerce Application",
+        liveURL: "https://dogtvfoods.com/",
+        liveURLText: "dogtvfoods.com",
+        description: 'Maria Foods is an innovative online food delivery and lunch platform that brings convenience and delicious meals straight to your doorstep. It allows users to browse a diverse menu of fresh and healthy options, customize their orders, and select specific time slots for delivery and lunch, ensuring meals arrive exactly when needed. With an intuitive interface, Maria Foods makes it easy to plan your lunch in advance or order on the go, catering to a variety of tastes and dietary preferences. Whether at home, in the office, or any preferred location, Maria Foods ensures a hassle-free experience, making it the ideal solution for busy individuals who value quality and punctuality in their meals.',
+        bannerImage: "https://res.cloudinary.com/dh7kygocu/image/upload/v1726963538/maria%20foods/ial9z54rnbffxkhlm5st.png",
+        images: [
+            "https://res.cloudinary.com/dh7kygocu/image/upload/v1736235240/maria%20foods/uqusyj712kclncz8ap5g.png",
+            "https://res.cloudinary.com/dh7kygocu/image/upload/v1736235240/maria%20foods/b4sprp0rze5mitawovvt.png",
+            "https://res.cloudinary.com/dh7kygocu/image/upload/v1736235238/maria%20foods/h8fmb6ns61j2pvlesugz.png",
+            "https://res.cloudinary.com/dh7kygocu/image/upload/v1736235240/maria%20foods/wgdyeip7umejonglzsk2.png",
+            "https://res.cloudinary.com/dh7kygocu/image/upload/v1736235239/maria%20foods/sslusr1di4fjr7vcxcqh.png",
+            "https://res.cloudinary.com/dh7kygocu/image/upload/v1736235238/maria%20foods/wvmho1fxnjynivvqqrar.png",
+            "https://res.cloudinary.com/dh7kygocu/image/upload/v1736235238/maria%20foods/kzgojibmp2qm7pbe01z0.png",
+            "https://res.cloudinary.com/dh7kygocu/image/upload/v1736235238/maria%20foods/o5gduvokmoibxvsf4hzn.png",
+            "https://res.cloudinary.com/dh7kygocu/image/upload/v1736235238/maria%20foods/fgasct9bj03ilqypseuv.png",
+            "https://res.cloudinary.com/dh7kygocu/image/upload/v1736235239/maria%20foods/bqe1gopfl2rhbbvpsyxh.png",
+        ]
+    },
+    {
+        name: "Oud Royal",
+        slug: "oud-royal",
+        info: "E-Commerce Application",
+        liveURL: "https://oudroyal.ae/",
+        liveURLText: "oudroyal.ae",
+        description: 'Oud Royal is a premium online e-commerce store specializing in authentic oud, oud-based perfumes, and related luxury products. Designed to provide a seamless shopping experience, the platform allows users to explore a curated collection of exquisite fragrances and accessories. With features like Add to Cart and Add to Wishlist, customers can effortlessly manage their purchases and save their favorite items for future consideration. Whether you are looking for a signature scent or a perfect gift, Oud Royal combines elegance and convenience, making it the ultimate destination for oud enthusiasts and connoisseurs.',
+        bannerImage: "https://res.cloudinary.com/dh7kygocu/image/upload/v1726963798/oud%20royal/fj1cxgmzh55i1kay00xg.png",
+        images: [
+            "https://res.cloudinary.com/dh7kygocu/image/upload/v1736235393/oud%20royal/rcservernx0maacnypla.png",
+            "https://res.cloudinary.com/dh7kygocu/image/upload/v1736235404/oud%20royal/u9jsave7djnnebmdq75q.png",
+            "https://res.cloudinary.com/dh7kygocu/image/upload/v1736235397/oud%20royal/s2caspprz3ziqvuguzds.png",
+            "https://res.cloudinary.com/dh7kygocu/image/upload/v1736235397/oud%20royal/kxxmlfgqima3rxfhrhla.png",
+            "https://res.cloudinary.com/dh7kygocu/image/upload/v1736235395/oud%20royal/fchvx13hr7sd779b3d15.png",
+            "https://res.cloudinary.com/dh7kygocu/image/upload/v1736235394/oud%20royal/zrhy9e8ilwsdh1d4velc.png",
+            "https://res.cloudinary.com/dh7kygocu/image/upload/v1736235397/oud%20royal/auogmq2q0mnifvq67n8q.png",
+            "https://res.cloudinary.com/dh7kygocu/image/upload/v1736235397/oud%20royal/eexpe4qb5aihbtkec2xd.png",
+            "https://res.cloudinary.com/dh7kygocu/image/upload/v1736235396/oud%20royal/vsnbbd4szcjnwnws6pkj.png",
+            "https://res.cloudinary.com/dh7kygocu/image/upload/v1736235396/oud%20royal/il6mt9yxnslhzj3donxu.png",
+            "https://res.cloudinary.com/dh7kygocu/image/upload/v1736235397/oud%20royal/n7uqjfjhxkkihojbn81w.png",
+        ]
+    },
+    {
+        name: "Bakatheer",
+        slug: "bakatheer",
+        info: "Bakatheer Blog / Artical Application",
+        liveURL: "https://staging-front.bakatheer.net/",
+        liveURLText: "bakatheer.net",
+        description: 'Bakatheer is an elegant online portfolio dedicated to celebrating the life and works of the renowned poet Bakatheer. This comprehensive platform offers a rich collection of his audio poems, allowing visitors to experience his verses in his own voice. The About section provides insights into his life, legacy, and poetic journey, while a curated list of his books and articles showcases his literary brilliance. The Gallery features captivating visuals from his life and events, and the Awards section highlights the accolades and recognition he has received for his contributions to literature. Bakatheer is a digital treasure trove for poetry enthusiasts and admirers of his timeless artistry.',
+        bannerImage: 'https://res.cloudinary.com/dh7kygocu/image/upload/v1726931374/bakatheer/ybupwmydxppfr64ovsez.png',
+        images: [
+            "https://res.cloudinary.com/dh7kygocu/image/upload/v1736235451/bakatheer/yopk16cjag83ze32sntr.png",
+            "https://res.cloudinary.com/dh7kygocu/image/upload/v1736235449/bakatheer/ievmu3mjkcbcopqgwlpj.png",
+            "https://res.cloudinary.com/dh7kygocu/image/upload/v1736235450/bakatheer/pdj0xnt1uyr3m0mrd1ss.png",
+            "https://res.cloudinary.com/dh7kygocu/image/upload/v1736235450/bakatheer/umq7l3oujwlu2wrtg9gs.png",
+            "https://res.cloudinary.com/dh7kygocu/image/upload/v1736235451/bakatheer/kidx6tqaknpof4v3ec3z.png",
+            "https://res.cloudinary.com/dh7kygocu/image/upload/v1736235450/bakatheer/k8vdzdzv8zjlbeslpmdq.png",
+            "https://res.cloudinary.com/dh7kygocu/image/upload/v1736235449/bakatheer/dtee6gar6awnfzr2onyf.png",
+            "https://res.cloudinary.com/dh7kygocu/image/upload/v1736235449/bakatheer/ngmpys86w2wkqepcmqza.png",
+        ]
     }
 ]
