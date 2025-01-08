@@ -237,5 +237,39 @@ export const projectDetailsList = [
             "https://res.cloudinary.com/dh7kygocu/image/upload/v1736235449/bakatheer/dtee6gar6awnfzr2onyf.png",
             "https://res.cloudinary.com/dh7kygocu/image/upload/v1736235449/bakatheer/ngmpys86w2wkqepcmqza.png",
         ]
+    },
+    {
+        name: "Adroit Solutions",
+        slug: "Adroit",
+        info: "Adroit Solutions Company Web",
+        liveURL: "https://www.theadroitsolutions.com/",
+        liveURLText: "theadroitsolutions.com",
+        description: 'Adroit Solutions is a modern and professional web application designed to showcase the companys services and products effectively. The website features a visually engaging home page with dynamic elements that highlight the companys mission and vision, along with quick links to key offerings. Visitors can explore a detailed services section, complete with categorized descriptions, testimonials, and case studies that demonstrate the value Adroit Solutions delivers. The products section provides a comprehensive catalog with high-quality visuals, detailed descriptions, and an inquiry form for potential customers. An "About Us" page shares the company’s history, values, and milestones, while the "Contact Us" page includes an interactive form and integrated Google Maps for easy communication. The website also features a blog section for updates on industry trends and company news, along with a subscription option for regular updates. With a responsive design optimized for all devices, adherence to SEO and accessibility standards, and secure, fast performance, the Adroit Solutions website reflects the company’s commitment to innovation, professionalism, and user experience.',
+        bannerImage: 'https://res.cloudinary.com/dh7kygocu/image/upload/v1726930392/adroit%20website/pb5rt1n3uzmpijxs1ntp.png',
+        images: [
+            "https://res.cloudinary.com/dh7kygocu/image/upload/v1736292089/adroit%20website/xrxg86axcsrvvshvbogc.png",
+            "https://res.cloudinary.com/dh7kygocu/image/upload/v1736292090/adroit%20website/sfqwkm2timkkbgn1lzc9.png",
+            "https://res.cloudinary.com/dh7kygocu/image/upload/v1736292089/adroit%20website/jxcrz0badci1njejerpf.png",
+            "https://res.cloudinary.com/dh7kygocu/image/upload/v1736292089/adroit%20website/clhhwud2a66o7rrnqqzm.png",
+            "https://res.cloudinary.com/dh7kygocu/image/upload/v1736292088/adroit%20website/durvaeznfwekcyonhuyp.png",
+            "https://res.cloudinary.com/dh7kygocu/image/upload/v1736292089/adroit%20website/bpglgvd8mmzhuqdx95ae.png",
+            "https://res.cloudinary.com/dh7kygocu/image/upload/v1736292088/adroit%20website/mmjas2t6xn0hwoxocgey.png",
+            "https://res.cloudinary.com/dh7kygocu/image/upload/v1736292088/adroit%20website/cwbnp8oyht5oed6gs9dn.png",
+            "https://res.cloudinary.com/dh7kygocu/image/upload/v1736292089/adroit%20website/o3ft1gf06mx7jrbj7lzj.png",
+            "https://res.cloudinary.com/dh7kygocu/image/upload/v1736292089/adroit%20website/q2v3qdhlys5t8hq8kxhq.png",
+            "https://res.cloudinary.com/dh7kygocu/image/upload/v1736292089/adroit%20website/zb9tvxf3d8p9qupnoajj.png",
+            "https://res.cloudinary.com/dh7kygocu/image/upload/v1736292090/adroit%20website/rnudj5uazy0ns5tfgpty.png",
+            "https://res.cloudinary.com/dh7kygocu/image/upload/v1736292088/adroit%20website/t4pni9uzlqwqto9nt3m9.png",
+        ]
+    },
+    {
+        name: "In Abu Dhabi",
+        slug: "in-abu-dhabi",
+        info: "Events Management/Booking, Work Space Booking and Artists",
+        liveURL: "https://production-front.inabudhabistore.ae/",
+        liveURLText: "inabudhabistore.ae",
+        description: 'This web application is an all-in-one platform designed to simplify event management, workspace booking, artist concert reservations, and e-commerce. It enables users to create, manage, and attend events seamlessly, offering features like detailed event listings, ticketing options, and real-time updates. Professionals can book workspaces or meeting rooms with ease, browsing available options and scheduling reservations based on their needs. Music enthusiasts can explore and book tickets for upcoming concerts, while artists and organizers can manage schedules, promotions, and ticket sales. The integrated e-commerce functionality allows users to shop for event-related products and merchandise with secure payments and order tracking. With a responsive design, real-time booking updates, and a user-friendly interface, the platform caters to the diverse needs of event-goers, professionals, and artists, making it an essential tool for managing bookings and shopping in one place.',
+        bannerImage: 'https://res.cloudinary.com/dh7kygocu/image/upload/v1726963057/in%20abu%20dhabi/skso0kj4n14fzh30x3zs.png',
+        images: []
     }
 ]
