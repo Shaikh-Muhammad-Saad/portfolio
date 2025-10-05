@@ -176,9 +176,9 @@ const Index4 = ({ workHistory }) => {
                       <h3>Professional &amp; Experienced Software Engineer</h3>
                     </div>
                     <p>
-                      A professional Software Engineer with 4 years of
+                      A professional Software Engineer with 5 years of
                       experience, proficient in cutting-edge technologies such
-                      as the MERN stack. With a proven track record in both web and mobile
+                      as the MERN stack and PERN stack. With a proven track record in both web and mobile
                       development, I specialize in delivering robust, scalable,
                       and efficient digital solutions. As an industry-savvy
                       professional, I stay ahead of tech trends, ensuring my

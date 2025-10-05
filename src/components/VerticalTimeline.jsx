@@ -12,7 +12,17 @@ import 'react-vertical-timeline-component/style.min.css';
 
 const timeline = [
   {
-    "duration": "Jan 2023 - Present",
+    "duration": "April 2025 - Present",
+    "title": "Senior Software Engineer (MERN | PERN)",
+    "company": "GenieSign",
+    "place": "Malaysia | Australia",
+    "description": "My responsibilities as a Senior Software Engineer include designing and implementing the overall architecture of the software systems, ensuring scalability and maintainability. I work on building and integrating microservices, designing database structures, and developing both frontend and backend components. I’m also involved in DevOps operations — managing deployments, CI/CD pipelines, and ensuring smooth system performance in production environments. In addition to hands-on development, I actively mentor junior developers, review code, and help guide the team in following best practices in software design and development.",
+    "education": false,
+    "linkText": "geniesign.io",
+    "link": "https://geniesign.io/",
+  },
+  {
+    "duration": "Jan 2023 - April 2025",
     "title": "MERN Stack Developer",
     "company": "TeamX Pakistan / TeamX Tec",
     "place": "Dubai",
