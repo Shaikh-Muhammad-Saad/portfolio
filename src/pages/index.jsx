@@ -92,6 +92,11 @@ const techImages = [
     title: 'AWS EC2',
   },
   {
+    src: 'assets/images/skills/cloudflare.png',
+    alt: 'Skill icon',
+    title: 'Cloudflare',
+  },
+  {
     src: 'assets/images/skills/prisma.png',
     alt: 'Skill icon',
     title: 'Prisma',
