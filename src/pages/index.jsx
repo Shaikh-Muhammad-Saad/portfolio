@@ -231,7 +231,7 @@ const Index4 = ({ workHistory }) => {
                   <h3>I’m A Skilled Engineer</h3>
                 </div>
                 <p>
-                  Demonstrating expertise in building full-stack web applications using the MERN stack (MongoDB, Express.js, React.js, Node.js). From designing robust back-end architectures and managing databases to crafting responsive and dynamic front-end user interfaces, I specialize in delivering seamless and scalable solutions. My projects highlight the integration of modern technologies to create efficient, user-centric applications
+                  Demonstrating expertise in building full-stack web applications using the MERN | PERN stack (MongoDB, PostgreSQL, Express.js, React.js, Node.js). From designing robust back-end architectures and managing databases to crafting responsive and dynamic front-end user interfaces, I specialize in delivering seamless and scalable solutions. My projects highlight the integration of modern technologies to create efficient, user-centric applications
                 </p>
               </div>
             </div>
