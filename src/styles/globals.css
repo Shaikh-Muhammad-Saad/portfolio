@@ -193,3 +193,23 @@
 .lb-container {
   z-index: 5000000 !important;
 }
+
+/* Lazy loading spinner animation */
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Image loading states */
+.image-placeholder {
+  backdrop-filter: blur(2px);
+}
+
+.image-container img {
+  transition: opacity 0.3s ease-in-out;
+}

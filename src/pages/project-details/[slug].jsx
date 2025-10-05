@@ -117,7 +117,7 @@ const ProjectDetails = ({ project }) => {
             </div>
           </div>
 
-          {project?.images.length
+          {project?.images?.length
             ? <ProjectsPaginatedContainer imagesList={project?.images ?? []} />
             : <div style={{ marginBottom: "400px" }} />}
 
