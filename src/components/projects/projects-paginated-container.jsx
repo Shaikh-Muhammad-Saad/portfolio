@@ -1,23 +1,13 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Lightbox from "react-awesome-lightbox";
 // You need to import the CSS only once
 import "react-awesome-lightbox/build/style.css";
 
 import { Element, scroller } from 'react-scroll';
 
-
-
 const ProjectsPaginatedContainer = ({ imagesList }) => {
-
-    const [currentPage, setCurrentPage] = useState(1);
     const [selectedImage, setSelectedImage] = useState(null);
-    const [loadedImages, setLoadedImages] = useState(new Set());
-    const [failedImages, setFailedImages] = useState(new Set());
-
-    // const itemsPerPage = 10;
-    const itemsPerPage = 100;
-    // const itemsPerPage = 20;
-
+    const [imageStatus, setImageStatus] = useState({}); // Track loading status for each image
 
     const scrollToSection = (section) => {
         scroller.scrollTo(section, {
@@ -28,182 +18,290 @@ const ProjectsPaginatedContainer = ({ imagesList }) => {
     };
 
     const handleImageLoad = (index) => {
-        setLoadedImages(prev => new Set([...prev, index]));
+        setImageStatus(prev => ({
+            ...prev,
+            [index]: { loaded: true, failed: false }
+        }));
     };
 
     const handleImageError = (index) => {
-        setFailedImages(prev => new Set([...prev, index]));
+        setImageStatus(prev => ({
+            ...prev,
+            [index]: { loaded: false, failed: true }
+        }));
     };
 
+    // Initialize image status when imagesList changes
+    useEffect(() => {
+        const newStatus = {};
+        imagesList.forEach((_, index) => {
+            if (!imageStatus[index]) {
+                newStatus[index] = { loaded: false, failed: false };
+            }
+        });
 
-    const handleClick = (pageNumber) => {
-        scrollToSection('section')
-        setCurrentPage(pageNumber);
-    };
-
-    const handlePrevClick = () => {
-        scrollToSection('section')
-        if (currentPage > 1) {
-            setCurrentPage(currentPage - 1);
+        if (Object.keys(newStatus).length > 0) {
+            setImageStatus(prev => ({ ...prev, ...newStatus }));
         }
-    };
+    }, [imagesList]);
 
-    const handleNextClick = () => {
-        scrollToSection('section')
-        if (currentPage < Math.ceil(imagesList.length / itemsPerPage)) {
-            setCurrentPage(currentPage + 1);
-        }
-    };
+    return (
+        <>
+            <style>{`
+                .projects-grid {
+                    display: grid;
+                    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+                    grid-gap: 30px;
+                    margin: 40px 0;
+                    width: 100%;
+                }
+                
+                .project-item {
+                    position: relative;
+                    border-radius: 12px;
+                    overflow: hidden;
+                    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+                    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+                    cursor: pointer;
+                    aspect-ratio: 4/3;
+                }
+                
+                .project-item:hover {
+                    transform: translateY(-10px);
+                    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+                    z-index: 2;
+                }
+                
+                .image-wrapper {
+                    position: relative;
+                    width: 100%;
+                    height: 100%;
+                    overflow: hidden;
+                    border-radius: 12px;
+                }
+                
+                .image-wrapper img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    transition: transform 0.5s ease;
+                    display: block;
+                }
+                
+                .project-item:hover .image-wrapper img {
+                    transform: scale(1.05);
+                }
+                
+                .image-overlay {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent 200%);
+                    opacity: 0;
+                    transition: opacity 0.3s ease;
+                    display: flex;
+                    align-items: flex-end;
+                    padding: 20px;
+                    z-index: 1;
+                }
+                
+                .project-item:hover .image-overlay {
+                    opacity: 1;
+                }
+                
+                .image-info {
+                    color: white;
+                    transform: translateY(20px);
+                    transition: transform 0.3s ease;
+                }
+                
+                .project-item:hover .image-info {
+                    transform: translateY(0);
+                }
+                
+                .image-info h4 {
+                    font-size: 18px;
+                    font-weight: 600;
+                    margin-bottom: 5px;
+                }
+                
+                .image-info p {
+                    font-size: 14px;
+                    opacity: 0.8;
+                    margin: 0;
+                }
+                
+                .zoom-icon {
+                    position: absolute;
+                    top: 20px;
+                    right: 20px;
+                    width: 40px;
+                    height: 40px;
+                    background: rgba(255, 255, 255, 0.2);
+                    backdrop-filter: blur(10px);
+                    border-radius: 50%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    opacity: 0;
+                    transform: scale(0.8);
+                    transition: all 0.3s ease;
+                    z-index: 1;
+                }
+                
+                .project-item:hover .zoom-icon {
+                    opacity: 1;
+                    transform: scale(1);
+                }
+                
+                .zoom-icon i {
+                    color: white;
+                    font-size: 18px;
+                }
+                
+                .loading-placeholder {
+                    background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+                    background-size: 200% 100%;
+                    animation: loading 1.5s infinite;
+                    border-radius: 12px;
+                    width: 100%;
+                    height: 100%;
+                }
+                
+                @keyframes loading {
+                    0% {
+                        background-position: 200% 0;
+                    }
+                    100% {
+                        background-position: -200% 0;
+                    }
+                }
+                
+                .error-placeholder {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: center;
+                    background: #f8f9fa;
+                    border-radius: 12px;
+                    padding: 20px;
+                    text-align: center;
+                    width: 100%;
+                    height: 100%;
+                }
+                
+                .error-placeholder i {
+                    font-size: 40px;
+                    color: #ccc;
+                    margin-bottom: 15px;
+                }
+                
+                .error-placeholder p {
+                    margin: 0;
+                    color: #666;
+                }
+                
+                @media (max-width: 768px) {
+                    .projects-grid {
+                        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+                        grid-gap: 20px;
+                    }
+                }
+                
+                @media (max-width: 480px) {
+                    .projects-grid {
+                        grid-template-columns: 1fr;
+                    }
+                }
+            `}</style>
 
-    const indexOfLastItem = currentPage * itemsPerPage;
-    const indexOfFirstItem = indexOfLastItem - itemsPerPage;
-    const currentItems = imagesList.slice(indexOfFirstItem, indexOfLastItem);
+            <Element name="section">
+                <section className="py-80 rpy-50">
+                    <div className="container container-1290">
+                        {/* Projects Grid */}
+                        <div className="projects-grid">
+                            {imagesList && imagesList.length > 0 ? (
+                                imagesList.map((src, index) => {
+                                    const status = imageStatus[index] || { loaded: false, failed: false };
+                                    const isLoaded = status.loaded;
+                                    const isFailed = status.failed;
 
-    const pageNumbers = [];
-    for (let i = 1; i <= Math.ceil(imagesList.length / itemsPerPage); i++) {
-        pageNumbers.push(i);
-    }
+                                    return (
+                                        <div
+                                            key={index}
+                                            className="project-item wow fadeInUp"
+                                            onClick={() => setSelectedImage({ imgIndex: index })}
+                                            data-wow-delay={`${(index % 6) * 0.1}s`}
+                                        >
+                                            <div className="image-wrapper">
+                                                {!isLoaded && !isFailed && (
+                                                    <div className="loading-placeholder"></div>
+                                                )}
 
+                                                {isFailed && (
+                                                    <div className="error-placeholder">
+                                                        <i className="fas fa-image"></i>
+                                                        <p>Failed to load image</p>
+                                                    </div>
+                                                )}
 
+                                                <img
+                                                    src={src}
+                                                    alt={`Project ${index + 1}`}
+                                                    loading="lazy"
+                                                    decoding="async"
+                                                    onLoad={() => handleImageLoad(index)}
+                                                    onError={() => handleImageError(index)}
+                                                    style={{
+                                                        display: 'block',
+                                                        opacity: isLoaded && !isFailed ? 1 : 0,
+                                                        transition: 'opacity 0.3s ease'
+                                                    }}
+                                                />
 
-    return (<>
-
-        <Element name="section">
-            <section className="blog-page-area py-130 rpy-100 rel z-1" >
-
-                <div className="container container-1290">
-
-                    <div className="row">
-
-                        {currentItems.map((src, index) => {
-                            const globalIndex = indexOfFirstItem + index;
-                            const isLoaded = loadedImages.has(globalIndex);
-                            const isFailed = failedImages.has(globalIndex);
-
-                            return (
-                                <div key={index} className="col-lg-6 col-md-12 " onClick={() => setSelectedImage({ imgIndex: index })}>
-                                    <div className=" wow fadeInUp delay-0-3s">
-                                        <div className="image-container" style={{ position: 'relative' }}>
-                                            {!isLoaded && !isFailed && (
-                                                <div className="image-placeholder" style={{
-                                                    position: 'absolute',
-                                                    top: 0,
-                                                    left: 0,
-                                                    width: '100%',
-                                                    height: '100%',
-                                                    backgroundColor: '#f0f0f0',
-                                                    display: 'flex',
-                                                    alignItems: 'center',
-                                                    justifyContent: 'center',
-                                                    borderRadius: '2px',
-                                                    zIndex: 1
-                                                }}>
-                                                    <div className="spinner" style={{
-                                                        width: '40px',
-                                                        height: '40px',
-                                                        border: '4px solid #e0e0e0',
-                                                        borderTop: '4px solid #2fb97a',
-                                                        borderRadius: '50%',
-                                                        animation: 'spin 1s linear infinite'
-                                                    }}></div>
-                                                </div>
-                                            )}
-
-                                            {isFailed && (
-                                                <div className="image-error" style={{
-                                                    position: 'absolute',
-                                                    top: 0,
-                                                    left: 0,
-                                                    width: '100%',
-                                                    height: '100%',
-                                                    backgroundColor: '#f8f8f8',
-                                                    display: 'flex',
-                                                    alignItems: 'center',
-                                                    justifyContent: 'center',
-                                                    borderRadius: '2px',
-                                                    border: '1px solid #ddd',
-                                                    color: '#999'
-                                                }}>
-                                                    <div style={{ textAlign: 'center' }}>
-                                                        <i className="fas fa-image" style={{ fontSize: '24px', marginBottom: '8px' }}></i>
-                                                        <div style={{ fontSize: '12px' }}>Failed to load</div>
+                                                <div className="image-overlay">
+                                                    <div className="image-info">
+                                                        <h4>Project View</h4>
+                                                        <p>Click to enlarge</p>
                                                     </div>
                                                 </div>
-                                            )}
 
-                                            <img
-                                                className="img-fluid"
-                                                src={src}
-                                                alt="Project Image"
-                                                loading="lazy"
-                                                decoding="async"
-                                                onLoad={() => handleImageLoad(globalIndex)}
-                                                onError={() => handleImageError(globalIndex)}
-                                                style={{
-                                                    opacity: isLoaded ? 1 : 0,
-                                                    transition: 'opacity 0.3s ease-in-out'
-                                                }}
-                                            />
+                                                <div className="zoom-icon">
+                                                    <i className="fas fa-search-plus"></i>
+                                                </div>
+                                            </div>
                                         </div>
-                                    </div>
+                                    );
+                                })
+                            ) : (
+                                <div style={{ gridColumn: "1 / -1", textAlign: "center", padding: "40px" }}>
+                                    <p>No images available for this project.</p>
                                 </div>
-                            );
-                        })}
-
-
-                        {selectedImage ?
-                            <Lightbox
-                                onClose={() => setSelectedImage(null)}
-                                images={currentItems.map((img) => ({ url: img }))}
-                                startIndex={selectedImage.imgIndex}
-                                doubleClickZoom={0.5}
-                                allowZoom={true}
-
-                            /> : null
-                        }
-
-
-                        {/* PAGINATION  */}
-                        <div className="col-lg-12">
-                            <ul className="pagination mt-10 flex-wrap justify-content-center wow fadeInUp delay-0-2s">
-                                <li
-                                    className={`page-item ${currentPage === 1 ? "disabled" : ""}`}
-                                    style={{ cursor: "pointer" }}
-                                >
-                                    <span className="page-link" onClick={handlePrevClick}>
-                                        <i className="fas fa-angle-left" />
-                                    </span>
-                                </li>
-                                {pageNumbers.map((number) => (
-                                    <li
-                                        key={number}
-                                        className={`page-item ${currentPage === number ? "active" : ""}`}
-                                        style={{ cursor: "pointer" }}
-                                    >
-                                        <span className="page-link" onClick={() => handleClick(number)}>
-                                            {number < 10 ? `0${number}` : number}
-                                            {currentPage === number && <span className="sr-only">(current)</span>}
-                                        </span>
-                                    </li>
-                                ))}
-                                <li
-                                    className={`page-item ${currentPage === pageNumbers.length ? "disabled" : ""}`}
-                                    style={{ cursor: "pointer" }}
-                                >
-                                    <span className="page-link" onClick={handleNextClick}>
-                                        <i className="fas fa-angle-right" />
-                                    </span>
-                                </li>
-                            </ul>
+                            )}
                         </div>
 
-
-
+                        {/* Lightbox */}
+                        {selectedImage && (
+                            <Lightbox
+                                onClose={() => setSelectedImage(null)}
+                                images={imagesList.map((img, idx) => ({
+                                    url: img,
+                                    title: `Project Image ${idx + 1}`
+                                }))}
+                                startIndex={selectedImage.imgIndex}
+                                doubleClickZoom={2}
+                                allowZoom={true}
+                                showThumbnails={true}
+                                showCaption={true}
+                            />
+                        )}
                     </div>
-                </div>
-            </section>
-        </Element>
-    </>)
-}
+                </section>
+            </Element>
+        </>
+    );
+};
 
 export default ProjectsPaginatedContainer;
