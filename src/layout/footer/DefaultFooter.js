@@ -15,7 +15,7 @@ const DefaultFooter = () => {
               <div className='logo'>
                 <Link legacyBehavior href='/'>
                   <a>
-                    <h3>Usama Irfan</h3>
+                    <h3>TechNova Solutions</h3>
                   </a>
                 </Link>
               </div>
@@ -42,16 +42,16 @@ const DefaultFooter = () => {
               <div className='lets-work mb-50 wow fadeInUp delay-0-2s animated'>
                 <img
                   src='assets/images/usamairfan-softwarengineer.png'
-                  alt="Let's Work Man"
+                  alt="Let's Work Together"
                 />
-                <span>Let’s Work Together</span>
+                <span>Let’s Build Something Amazing</span>
               </div>
               <div className='footer-contact-info wow fadeInUp delay-0-3s animated'>
                 <a
                   className='theme-btn style-three'
-                  href='mailto:usama.irfan9791@gmail.com'
+                  href='mailto:info@technovasolutions.com'
                 >
-                  usama.irfan9791@gmail.com <i className='far fa-arrow-right' />
+                  info@technovasolutions.com <i className='far fa-arrow-right' />
                 </a>
               </div>
             </div>
@@ -136,7 +136,7 @@ const DefaultFooter = () => {
                 <p>
                   Copyright @2023,{' '}
                   <Link legacyBehavior href='/'>
-                    <a>Usama Irfan</a>
+                    <a>TechNova Solutions</a>
                   </Link>{' '}
                   All Rights Reserved
                 </p>

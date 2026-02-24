@@ -16,8 +16,8 @@ const DefaultHeader = ({ singleMenu }) => {
                   <a>
                     <img
                       src='assets/images/logos/logo.png'
-                      alt='Logo'
-                      title='Logo'
+                      alt='TechNova Solutions Logo'
+                      title='TechNova Solutions Logo'
                     />
                   </a>
                 </Link>
