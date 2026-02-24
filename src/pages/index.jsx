@@ -157,9 +157,9 @@ const Index4 = ({ workHistory }) => {
       >
         <div className='container'>
           <h1 className='hero-title  wow fadeInUp delay-0-2s'>
-            Shaikh Muhammad Saad
+            TechNova Solutions
             <br />
-            Software Engineer
+            Software Development Company
           </h1>
         </div>
       </section>
@@ -177,26 +177,26 @@ const Index4 = ({ workHistory }) => {
                 <div className='col-lg-6'>
                   <div className='about-four-content rmb-55 wow fadeInUp delay-0-2s'>
                     <div className='section-title mb-35'>
-                      <span className='sub-title mb-15'>About Me</span>
-                      <h3>Professional &amp; Experienced Software Engineer</h3>
+                      <span className='sub-title mb-15'>About Us</span>
+                      <h3>Professional &amp; Experienced Software Development Team</h3>
                     </div>
                     <p>
-                      A professional Software Engineer with 5 years of
+                      A professional software development company with 5+ years of
                       experience, proficient in cutting-edge technologies such
                       as the MERN stack and PERN stack. With a proven track record in both web and mobile
-                      development, I specialize in delivering robust, scalable,
+                      development, we specialize in delivering robust, scalable,
                       and efficient digital solutions. As an industry-savvy
-                      professional, I stay ahead of tech trends, ensuring my
+                      team, we stay ahead of tech trends, ensuring our
                       projects enhance user experience and fulfill business
-                      objectives. Expert in JavaScript-based technologies and
-                      problem-solving, I ensure my work drives digital
+                      objectives. Experts in JavaScript-based technologies and
+                      problem-solving, we ensure our work drives digital
                       innovation.
                     </p>
                     <div className='list-style-three pt-25 pb-20'>
                       <li>Web Development</li>
-                      <li>Backend Development</li>
+                      <li>Mobile App Development</li>
                       <li>UI/UX Designing</li>
-                      <li>SQL / NoSQL Database</li>
+                      <li>Full-Stack Development</li>
                     </div>
                   </div>
                 </div>
@@ -231,12 +231,12 @@ const Index4 = ({ workHistory }) => {
               <div className='my-skill-content rmb-55 wow fadeInLeft delay-0-2s'>
                 <div className='section-title mb-35'>
                   <span className='sub-title mb-15'>
-                    My Skills &amp; Experience
+                    Our Skills &amp; Experience
                   </span>
-                  <h3>I’m A Skilled Engineer</h3>
+                  <h3>We're A Skilled Development Team</h3>
                 </div>
                 <p>
-                  Demonstrating expertise in building full-stack web applications using the MERN | PERN stack (MongoDB, PostgreSQL, Express.js, React.js, Node.js). From designing robust back-end architectures and managing databases to crafting responsive and dynamic front-end user interfaces, I specialize in delivering seamless and scalable solutions. My projects highlight the integration of modern technologies to create efficient, user-centric applications
+                  Demonstrating expertise in building full-stack web and mobile applications using the MERN | PERN stack (MongoDB, PostgreSQL, Express.js, React.js, Node.js). From designing robust back-end architectures and managing databases to crafting responsive and dynamic front-end user interfaces, we specialize in delivering seamless and scalable solutions. Our projects highlight the integration of modern technologies to create efficient, user-centric applications
                 </p>
               </div>
             </div>
@@ -279,8 +279,8 @@ const Index4 = ({ workHistory }) => {
           <div className='row justify-content-center'>
             <div className='col-xl-8 col-lg-10'>
               <div className='section-title text-center mb-60 wow fadeInUp delay-0-2s'>
-                <span className='sub-title mb-20'>My Past Work History</span>
-                <h2>My Career In A Blink</h2>
+                <span className='sub-title mb-20'>Our Project History</span>
+                <h2>Company Journey In A Blink</h2>
               </div>
             </div>
           </div>
@@ -338,8 +338,8 @@ const Index4 = ({ workHistory }) => {
           <div className='row align-items-end pb-35'>
             <div className='col-lg-8'>
               <div className='section-title mb-30 wow fadeInUp delay-0-2s'>
-                <span className='sub-title mb-15'>My Education</span>
-                <h2>Related Education</h2>
+                <span className='sub-title mb-15'>Company Certifications</span>
+                <h2>Industry Recognition</h2>
               </div>
             </div>
           </div>
@@ -440,7 +440,7 @@ const Index4 = ({ workHistory }) => {
                     <div className="col-xl-10">
                       <div className="section-title mb-60">
                         <span className="sub-title mb-15">Contact</span>
-                        <h2>Contact Me</h2>
+                        <h2>Contact Us</h2>
                       </div>
                     </div>
                   </div>
@@ -448,18 +448,14 @@ const Index4 = ({ workHistory }) => {
 
                     <div className="col-sm-12">
                       <div className="our-location-address mb-40">
-                        <h5>Karachi, Pakistan</h5>
+                        <h5>TechNova Solutions</h5>
                         <p>
                           Gulshan-e-Iqbal Block 13D, Karachi.
                         </p>
-                        <a className="callto" href="mailto:support@gmail.com">
-                          <i className="fas fa-envelope" /> smsidrees@gmail.com
+                        <a className="callto" href="mailto:info@technovasolutions.com">
+                          <i className="fas fa-envelope" /> info@technovasolutions.com
                         </a>
                         <br />
-                        {/* <a className="callto" href="callto:+00012345688">
-                          <i className="fas fa-phone" /> +971 3332311978
-                        </a>
-                        <br /> */}
                         <a className="callto" href="callto:+00012345688">
                           <i className="fas fa-phone" /> +92 3332311978
                         </a>
@@ -474,8 +470,8 @@ const Index4 = ({ workHistory }) => {
             <div className='col-lg-6'>
               <div className='drop-me-form-part rmb-50 wow fadeInLeft delay-0-2s'>
                 <div className='section-title mb-40'>
-                  <span className='sub-title mb-20'>Drop Me A Message</span>
-                  <h2>Let&rsquo;s Get In Touch</h2>
+                  <span className='sub-title mb-20'>Get In Touch</span>
+                  <h2>Let's Discuss Your Project</h2>
                 </div>
                 <ContactForm1 />
               </div>
