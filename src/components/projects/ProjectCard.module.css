@@ -1,0 +1,207 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border);
+  background: var(--surface);
+  transition: border-color 0.35s ease, transform 0.5s var(--ease-out),
+    box-shadow 0.5s var(--ease-out);
+}
+
+.card:hover {
+  border-color: rgba(85, 230, 165, 0.35);
+  box-shadow: 0 30px 60px -30px rgba(0, 0, 0, 0.8),
+    0 0 0 1px rgba(85, 230, 165, 0.08);
+}
+
+.lg {
+  grid-column: span 3;
+}
+
+.md {
+  grid-column: span 2;
+}
+
+.media {
+  position: relative;
+  aspect-ratio: 16 / 10;
+  margin: 10px 10px 0;
+  overflow: hidden;
+  border-radius: calc(var(--radius-lg) - 8px);
+  border: 1px solid var(--border);
+  background: var(--surface-2);
+}
+
+.lg .media {
+  aspect-ratio: 16 / 9;
+}
+
+/* Scale the wrapper (not the img) so it doesn't fight the image fade-in transition. */
+.media > span:first-child {
+  transition: transform 0.8s var(--ease-out);
+}
+
+.card:hover .media > span:first-child {
+  transform: scale(1.045);
+}
+
+.shade {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    transparent 40%,
+    rgba(6, 8, 11, 0.75) 100%
+  );
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.card:hover .shade {
+  opacity: 1;
+}
+
+.view {
+  position: absolute;
+  left: 16px;
+  bottom: 16px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  height: 38px;
+  padding: 0 16px;
+  border-radius: 999px;
+  background: var(--accent);
+  color: #03130b;
+  font-size: 0.85rem;
+  font-weight: 600;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.35s ease, transform 0.45s var(--ease-out);
+}
+
+.view svg {
+  width: 16px;
+  height: 16px;
+}
+
+.card:hover .view {
+  opacity: 1;
+  transform: none;
+}
+
+.body {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  padding: 20px 22px 22px;
+}
+
+.top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.category {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.index {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--text-dim);
+}
+
+.title {
+  margin-top: 10px;
+  font-size: 1.35rem;
+  letter-spacing: -0.025em;
+}
+
+.lg .title {
+  font-size: clamp(1.4rem, 2.2vw, 1.75rem);
+}
+
+/* The title link covers the whole card; nested links sit above it. */
+.stretched::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+
+.info {
+  margin-top: 6px;
+  color: var(--text-muted);
+  font-size: 0.93rem;
+  line-height: 1.55;
+}
+
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: auto;
+  padding-top: 18px;
+}
+
+.live {
+  position: relative;
+  z-index: 2;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--text-muted);
+  transition: color 0.2s ease;
+}
+
+.live svg {
+  width: 14px;
+  height: 14px;
+}
+
+.live:hover {
+  color: var(--accent);
+}
+
+.liveDot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 10px var(--accent);
+}
+
+.count {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--text-dim);
+}
+
+@media (max-width: 1080px) {
+  .lg,
+  .md {
+    grid-column: span 3;
+  }
+}
+
+@media (max-width: 760px) {
+  .lg,
+  .md {
+    grid-column: 1 / -1;
+  }
+
+  .lg .media {
+    aspect-ratio: 16 / 10;
+  }
+}

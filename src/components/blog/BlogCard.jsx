@@ -1,51 +1,45 @@
 import moment from 'moment';
 import Link from 'next/link';
-import React from 'react';
+import { LuArrowUpRight, LuCalendar } from 'react-icons/lu';
 
-const BlogCard = ({ blog }) => {
-  const blogData = blog?.fields;
+import styles from './Blog.module.css';
+
+import Img from '@/src/components/ui/Img';
+import Reveal from '@/src/components/ui/Reveal';
+
+const BlogCard = ({ blog, delay }) => {
+  const data = blog?.fields;
+  const image = data?.blogImage?.fields?.file?.url;
+
   return (
-    <div className='col-xl-4 col-md-6'>
-      <div className='blog-item wow fadeInUp delay-0-2s'>
-        <Link href={`/blog-details/${blogData?.slug}`}>
-          <div className='image position-relative'>
-            <img
-              width={400}
-              height={450}
-              src={blogData?.blogImage?.fields?.file?.url}
-              alt='Blog'
-            />
-          </div>
-        </Link>
-        <ul className='blog-meta'>
-          <li>
-            <i className='far fa-calendar-alt' />
-            <Link legacyBehavior href={`/blog-details/${blogData?.slug}`}>
-              <a>{moment(blog?.sys?.updatedAt).format('ll')}</a>
-            </Link>
-          </li>
-          {blogData?.comments ? (
-            <li>
-              <i className='far fa-comments' />
-              <Link legacyBehavior href={`/blog-details/${blogData?.slug}`}>
-                <a>Comment ({blogData?.comments?.length})</a>
-              </Link>
-            </li>
-          ) : null}
-        </ul>
-        <hr />
-        <h4>
-          <Link legacyBehavior href={`/blog-details/${blogData?.slug}`}>
-            <a>{blogData?.title}</a>
-          </Link>
-        </h4>
-        <Link legacyBehavior href={`/blog-details/${blogData?.slug}`}>
-          <a className='read-more'>
-            Read More <i className='far fa-arrow-right' />
-          </a>
-        </Link>
+    <Reveal as='article' delay={delay} className={styles.card}>
+      <div className={styles.media}>
+        {image ? (
+          <Img
+            src={image}
+            alt={data?.title}
+            widths={[480, 720, 960]}
+            sizes='(max-width: 760px) 100vw, 400px'
+          />
+        ) : null}
       </div>
-    </div>
+      <div className={styles.body}>
+        <span className={styles.date}>
+          <LuCalendar /> {moment(blog?.sys?.updatedAt).format('ll')}
+        </span>
+        <h2 className={styles.title}>
+          <Link
+            href={`/blog-details/${data?.slug}`}
+            className={styles.stretched}
+          >
+            {data?.title}
+          </Link>
+        </h2>
+        <span className={styles.more}>
+          Read article <LuArrowUpRight />
+        </span>
+      </div>
+    </Reveal>
   );
 };
 

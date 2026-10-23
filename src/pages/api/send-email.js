@@ -93,8 +93,8 @@ apiRoute.post((req, res) => {
     service: 'yahoo',
     auth: {
       user: 'ssidrees@yahoo.com',
-      pass: 'goirmffaeiwbdtbf' // ssidrees@yahoo.com yahoo app-password
-    }
+      pass: 'goirmffaeiwbdtbf', // ssidrees@yahoo.com yahoo app-password
+    },
   };
   const transporter = createTransport(config); // * Initialize email transporter
 

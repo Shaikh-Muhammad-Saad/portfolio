@@ -1,18 +1,29 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
+import { LuArrowUp } from 'react-icons/lu';
 
-import { scrollTopFun } from '../utils';
+import styles from './ScrollTop.module.css';
 
 const ScrollTop = () => {
+  const [visible, setVisible] = useState(false);
+
   useEffect(() => {
-    scrollTopFun();
+    const onScroll = () => setVisible(window.scrollY > 600);
+    onScroll();
+    window.addEventListener('scroll', onScroll, { passive: true });
+    return () => window.removeEventListener('scroll', onScroll);
   }, []);
-  const scrollTop = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  };
+
   return (
-    <button className='scroll-top scroll-to-target' onClick={() => scrollTop()}>
-      <span className='fas fa-angle-double-up' />
+    <button
+      type='button'
+      aria-label='Back to top'
+      className={`${styles.button} ${visible ? styles.visible : ''}`}
+      onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+      tabIndex={visible ? 0 : -1}
+    >
+      <LuArrowUp />
     </button>
   );
 };
+
 export default ScrollTop;

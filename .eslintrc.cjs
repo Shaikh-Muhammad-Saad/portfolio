@@ -18,6 +18,8 @@ module.exports = {
     '@typescript-eslint/explicit-module-boundary-types': 'off',
 
     'react/display-name': 'off',
+    // Allow Next's built-in styled-jsx (<style jsx global>).
+    'react/no-unknown-property': ['error', { ignore: ['jsx', 'global'] }],
     // 'react/jsx-curly-brace-presence': [
     //   'warn',
     //   { props: 'never', children: 'never' },
