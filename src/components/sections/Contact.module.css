@@ -1,0 +1,161 @@
+.section {
+  border-top: 1px solid var(--border);
+  background: radial-gradient(
+    50% 50% at 100% 50%,
+    rgba(85, 230, 165, 0.06),
+    transparent 70%
+  );
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  gap: clamp(40px, 6vw, 80px);
+  align-items: start;
+}
+
+.emailCard {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-top: 40px;
+  padding: 14px;
+  border-radius: var(--radius);
+  border: 1px solid rgba(85, 230, 165, 0.3);
+  background: var(--accent-soft);
+}
+
+.emailCard a {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--text);
+  word-break: break-all;
+}
+
+.emailCard a:hover {
+  color: var(--accent);
+}
+
+.copy {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  flex: none;
+  margin-left: auto;
+  height: 36px;
+  padding: 0 12px;
+  border-radius: 10px;
+  border: 1px solid var(--border-strong);
+  background: rgba(6, 8, 11, 0.5);
+  font-size: 0.8rem;
+  font-weight: 600;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.copy:hover {
+  background: var(--accent);
+  color: #03130b;
+}
+
+.copy svg {
+  width: 14px;
+  height: 14px;
+}
+
+.methods {
+  display: grid;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.method {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 14px;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  background: var(--surface);
+  transition: border-color 0.2s ease, background 0.2s ease;
+}
+
+a.method:hover {
+  border-color: rgba(85, 230, 165, 0.35);
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.methodIcon {
+  display: grid;
+  place-items: center;
+  flex: none;
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--accent);
+}
+
+.methodIcon svg {
+  width: 19px;
+  height: 19px;
+}
+
+.methodText {
+  display: grid;
+  min-width: 0;
+  line-height: 1.4;
+}
+
+.methodText small {
+  font-size: 0.78rem;
+  color: var(--text-dim);
+}
+
+.methodText > span {
+  color: var(--text);
+  font-weight: 500;
+}
+
+.arrow {
+  width: 18px;
+  height: 18px;
+  margin-left: auto;
+  color: var(--text-dim);
+  transition: transform 0.25s var(--ease-out), color 0.2s ease;
+}
+
+a.method:hover .arrow {
+  color: var(--accent);
+  transform: translate(2px, -2px);
+}
+
+.formCard {
+  padding: clamp(24px, 4vw, 44px);
+  border-radius: var(--radius-xl);
+  border: 1px solid var(--border);
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.04),
+    rgba(255, 255, 255, 0.015)
+  );
+  box-shadow: var(--shadow-lg);
+}
+
+.formHead {
+  margin-bottom: 28px;
+}
+
+.formHead :global(.eyebrow) {
+  margin-bottom: 10px;
+}
+
+.formHead h3 {
+  font-size: clamp(1.5rem, 2.6vw, 2rem);
+  letter-spacing: -0.03em;
+}
+
+@media (max-width: 960px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}

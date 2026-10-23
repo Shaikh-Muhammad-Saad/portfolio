@@ -1,167 +1,210 @@
-import React from 'react';
+import Link from 'next/link';
+import {
+  LuArrowLeft,
+  LuArrowRight,
+  LuArrowUpRight,
+  LuGlobe,
+  LuImage,
+  LuLayers,
+  LuMonitorSmartphone,
+} from 'react-icons/lu';
+
+import styles from '@/src/components/projects/ProjectDetails.module.css';
+
+import { COVER_WIDTHS } from '@/src/components/projects/constants';
+import ProjectGallery from '@/src/components/projects/ProjectGallery';
 import SEOWrapper from '@/src/components/SEOWrapper';
-import Layout from '../../layout/Layout';
-import ProjectsPaginatedContainer from '@/src/components/projects/projects-paginated-container';
-import { projectDetailsList } from '@/src/DB/projects';
+import Img from '@/src/components/ui/Img';
+import Reveal from '@/src/components/ui/Reveal';
+import { projectDetailsList } from '@/src/data/projects';
+import Layout from '@/src/layout/Layout';
 
+const NeighbourCard = ({ project, dir }) => (
+  <Link
+    href={`/project-details/${project.slug}`}
+    className={`${styles.neighbour} ${
+      dir === 'next' ? styles.neighbourNext : ''
+    }`}
+  >
+    <span className={styles.neighbourThumb}>
+      <Img src={project.bannerImage} alt='' widths={[320, 480]} sizes='160px' />
+    </span>
+    <span className={styles.neighbourText}>
+      <small>
+        {dir === 'prev' ? <LuArrowLeft /> : null}
+        {dir === 'prev' ? 'Previous project' : 'Next project'}
+        {dir === 'next' ? <LuArrowRight /> : null}
+      </small>
+      <strong>{project.name}</strong>
+      <span>{project.category}</span>
+    </span>
+  </Link>
+);
 
-
-const ProjectDetails = ({ project }) => {
-
+const ProjectDetails = ({ project, prev, next }) => {
+  const [w, h] = project.bannerSize || [16, 9];
+  const facts = [
+    { icon: LuLayers, label: 'Type', value: project.category },
+    { icon: LuMonitorSmartphone, label: 'Scope', value: project.info },
+    project.images?.length
+      ? {
+          icon: LuImage,
+          label: 'Screens',
+          value: `${project.images.length} screens`,
+        }
+      : null,
+  ].filter(Boolean);
 
   return (
-    <Layout header={2} footer={4}>
+    <Layout>
       <SEOWrapper
-        title={project?.name}
-        description={project?.name?.length > 160 ? name?.slice(0, 160) : project?.name}
-        image={project?.bannerImage}
+        title={project.name}
+        description={
+          project.description?.length > 160
+            ? `${project.description.slice(0, 157)}...`
+            : project.description
+        }
+        image={project.bannerImage}
+        type='article'
       />
 
-      <section
-        className='page-banner pt-100 rpt-150 pb-75 rel z-1'
-        style={{ backgroundImage: 'url(assets/images/hero/hero-two-bg.png)' }}
-      >
-        <div className='container container-1290'>
-          <div className='row'>
-            <div className='col-lg-12'>
-              <h1 className='hero-title style-two mt-65 mb-30 wow fadeInUp delay-0-2s'>
-                {project?.name ?? "Project Name"}
-                <img
-                  className='mxw-10 leaf'
-                  src='/assets/images/banner/leaf-small.png'
-                  alt='Leaf'
-                />
-              </h1>
-            </div>
-          </div>
-        </div>
-      </section>
+      <section className={styles.hero}>
+        <span className={styles.glow} aria-hidden='true' />
+        <div className='container'>
+          <Link href='/#projects' className={styles.back}>
+            <LuArrowLeft /> All projects
+          </Link>
 
-      <div className='project-details-image rel z-1'>
-        <div className='container-fluid'>
-          <div className='image wow fadeInUp delay-0-2s'>
-            <img
-              style={{
-                width: '100%',
-                height: '100%',
-                objectFit: 'contain',
-                objectPosition: 'center',
-              }}
-              src={project?.bannerImage}
-              alt='Project'
+          <div className={styles.heading}>
+            <div>
+              <span className={`eyebrow ${styles.in}`}>{project.category}</span>
+              <h1
+                className={`${styles.title} ${styles.in}`}
+                style={{ '--d': '60ms' }}
+              >
+                {project.name}
+              </h1>
+              <p
+                className={`${styles.lead} ${styles.in}`}
+                style={{ '--d': '120ms' }}
+              >
+                {project.info}
+              </p>
+            </div>
+            {project.liveURL ? (
+              <a
+                href={project.liveURL}
+                target='_blank'
+                rel='noreferrer'
+                className={`btn btn-primary ${styles.in}`}
+                style={{ '--d': '180ms' }}
+              >
+                <LuGlobe /> Visit {project.liveURLText} <LuArrowUpRight />
+              </a>
+            ) : null}
+          </div>
+
+          <div
+            className={`${styles.cover} ${styles.in}`}
+            style={{ '--d': '220ms', aspectRatio: `${w} / ${h}` }}
+          >
+            <Img
+              src={project.bannerImage}
+              alt={`${project.name} - ${project.info}`}
+              widths={COVER_WIDTHS}
+              sizes='(max-width: 1264px) calc(100vw - 32px), 1200px'
+              priority
             />
           </div>
         </div>
-      </div>
+      </section>
 
-      <section className='project-details-area pt-80 rel z-1'>
-        <div className='container container-1290'>
-          <div className='row pb-35 wow fadeInUp delay-0-2s'>
-            <div className='col-lg-4'>
-              <h3 className='title mb-30'>Project Information</h3>
-            </div>
+      <section className={styles.overview}>
+        <div className={`container ${styles.overviewGrid}`}>
+          <Reveal>
+            <span className='eyebrow'>Overview</span>
+            <h2 className={styles.h2}>More about the project</h2>
+            <p className={styles.description}>{project.description}</p>
+          </Reveal>
 
-            <div className=''>
-              <div className=''>
-                <p className='sub-title mb-0'>{project?.info}</p>
-                <a className='sub-title mb-0' href={project?.liveURL} target="_blank" rel="noopener noreferrer" style={{ color: "#55E6A5" }}>
-                  {project?.liveURLText}
-
-                  <svg
-                    width="20px"
-                    height="20px"
-                    className="ms-1"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <g id="SVGRepo_bgCarrier" strokeWidth="0"></g>
-                    <g id="SVGRepo_tracerCarrier" strokeLinecap="round" strokeLinejoin="round" stroke="#CCCCCC" strokeWidth="0.192"></g>
-                    <g id="SVGRepo_iconCarrier">
-                      <path
-                        d="M7 17L17 7M17 7H8M17 7V16"
-                        stroke="#55E6A5"
-                        strokeWidth="1.152"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      ></path>
-                    </g>
-                  </svg>
-
-                </a>
-              </div>
-
-              {/* <div className=''>
-                  <h5>Client</h5>
-                  <p className='sub-title mb-20'>{'Confidential'}</p>
+          <Reveal as='aside' delay={100} className={styles.facts}>
+            <h3>Project information</h3>
+            <dl>
+              {facts.map(({ icon: Icon, label, value }) => (
+                <div key={label}>
+                  <dt>
+                    <Icon /> {label}
+                  </dt>
+                  <dd>{value}</dd>
                 </div>
-
-                <div className=''>
-                  <h5>Category</h5>
-                  <p className='sub-title mb-20'>Full Stack Development</p>
-                </div> */}
-
-            </div>
-          </div>
-
-          <hr />
-
-          <div className='row pt-50 wow fadeInUp delay-0-2s'>
-            <div className='col-lg-4'>
-              <h3 className='title mb-30'>More About The Project</h3>
-            </div>
-            <div className='col-lg-8'>
-              <div className='big-letter text'>
-                {project?.description}
-              </div>
-            </div>
-          </div>
-
-          {project?.images?.length
-            ? <ProjectsPaginatedContainer imagesList={project?.images ?? []} />
-            : <div style={{ marginBottom: "400px" }} />}
-
-          <hr />
+              ))}
+              {project.liveURL ? (
+                <div>
+                  <dt>
+                    <LuGlobe /> Live
+                  </dt>
+                  <dd>
+                    <a href={project.liveURL} target='_blank' rel='noreferrer'>
+                      {project.liveURLText} <LuArrowUpRight />
+                    </a>
+                  </dd>
+                </div>
+              ) : null}
+            </dl>
+          </Reveal>
         </div>
       </section>
+
+      {project.images?.length ? (
+        <section className={styles.gallery}>
+          <div className='container'>
+            <Reveal className={styles.galleryHead}>
+              <div>
+                <span className='eyebrow'>Gallery</span>
+                <h2 className={styles.h2}>Inside {project.name}</h2>
+              </div>
+              <p>Click any screen to view it full size.</p>
+            </Reveal>
+            <ProjectGallery images={project.images} name={project.name} />
+          </div>
+        </section>
+      ) : null}
+
+      <nav className={styles.neighbours} aria-label='More projects'>
+        <div className={`container ${styles.neighboursGrid}`}>
+          <NeighbourCard project={prev} dir='prev' />
+          <NeighbourCard project={next} dir='next' />
+        </div>
+      </nav>
     </Layout>
   );
 };
 
-export const getStaticPaths = () => {
-  const projects = projectDetailsList;
+export const getStaticPaths = () => ({
+  paths: projectDetailsList.map((p) => ({ params: { slug: p.slug } })),
+  fallback: 'blocking',
+});
 
-  const paths = projects.map((project) => ({
-    params: {
-      slug: project.slug,
-    },
-  }));
+export const getStaticProps = ({ params }) => {
+  const index = projectDetailsList.findIndex((p) => p.slug === params.slug);
 
-  return {
-    paths,
-    fallback: true,
-  };
-};
-
-export const getStaticProps = async ({ params }) => {
-
-  const project = projectDetailsList.find((project) => {
-    if (params.slug === project.slug) return project;
-  })
-
-  if (!project) {
-    return {
-      redirect: {
-        destination: '/',
-        permanent: false,
-      },
-    };
+  if (index === -1) {
+    return { redirect: { destination: '/', permanent: false } };
   }
+
+  const total = projectDetailsList.length;
+  const pick = ({ name, slug, bannerImage, category }) => ({
+    name,
+    slug,
+    bannerImage,
+    category,
+  });
 
   return {
     props: {
-      project: project,
-
+      project: projectDetailsList[index],
+      prev: pick(projectDetailsList[(index - 1 + total) % total]),
+      next: pick(projectDetailsList[(index + 1) % total]),
     },
   };
 };

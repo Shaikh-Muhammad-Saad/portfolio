@@ -1,0 +1,59 @@
+{
+  "portrait": {
+    "width": 3062,
+    "height": 3646,
+    "blur": "data:image/webp;base64,UklGRvYAAABXRUJQVlA4IOoAAAAwBgCdASoYAB0APu1mq0+ppSOiMBgIATAdiWoAsR8xoIEn7G/L9SriYOPDuaYLuTqeu3IV3MwpYeAAAP7tTiJtYPR9Sd5mYVzb6Hh/paYG8M6DVr2ezdPHoPXhPpBcgne0Z+yu8xW2duf2zZloUTkURp9kJHa6ZTmplf5L2VSCHNRt1CjaI3lBMTPKT6tfzgxQHwsiTXBUyoGxOH7Jw1NqJKJPL3OoQ65LUaKer1VB8HGHu8p5wjYAquMQStzNjppE1Sj7+3eld93l7AJL3CHaBGrAcqDrphjMkwWzjES2hmIUCUm9qJq8AAA=",
+    "avif": [
+      ["/images/opt/portrait-480.avif", 480],
+      ["/images/opt/portrait-720.avif", 720],
+      ["/images/opt/portrait-960.avif", 960],
+      ["/images/opt/portrait-1280.avif", 1280]
+    ],
+    "webp": [
+      ["/images/opt/portrait-480.webp", 480],
+      ["/images/opt/portrait-720.webp", 720],
+      ["/images/opt/portrait-960.webp", 960],
+      ["/images/opt/portrait-1280.webp", 1280]
+    ]
+  },
+  "degree": {
+    "width": 3507,
+    "height": 2480,
+    "blur": "data:image/webp;base64,UklGRmwAAABXRUJQVlA4IGAAAAAwAwCdASoYABEAPtVUoU2oJKMiN+gBABqJYwAAq1v3QKTUAP7w1IPRUL7jo3/rhKyjwijizFTpMGS+h0weYWNX5o/0QS3wbHlw3u3aUb8a7TRf0fONl+7eyhvoQg6gAAA=",
+    "avif": [
+      ["/images/opt/degree-640.avif", 640],
+      ["/images/opt/degree-1200.avif", 1200],
+      ["/images/opt/degree-2000.avif", 2000]
+    ],
+    "webp": [
+      ["/images/opt/degree-640.webp", 640],
+      ["/images/opt/degree-1200.webp", 1200],
+      ["/images/opt/degree-2000.webp", 2000]
+    ]
+  },
+  "og": {
+    "src": "/images/opt/og.jpg",
+    "width": 1200,
+    "height": 630
+  },
+  "skills/react": "/images/opt/skills/react.webp",
+  "skills/next": "/images/opt/skills/next.webp",
+  "skills/express": "/images/opt/skills/express.webp",
+  "skills/nestjs": "/images/opt/skills/nestjs.webp",
+  "skills/node": "/images/opt/skills/node.webp",
+  "skills/mongodb": "/images/opt/skills/mongodb.webp",
+  "skills/postgresql": "/images/opt/skills/postgresql.webp",
+  "skills/docker": "/images/opt/skills/docker.webp",
+  "skills/vercel": "/images/opt/skills/vercel.webp",
+  "skills/aws": "/images/opt/skills/aws.webp",
+  "skills/cloudflare": "/images/opt/skills/cloudflare.webp",
+  "skills/prisma": "/images/opt/skills/prisma.webp",
+  "skills/ubuntu": "/images/opt/skills/ubuntu.webp",
+  "skills/nginx": "/images/opt/skills/nginx.webp",
+  "skills/firebase": "/images/opt/skills/firebase.webp",
+  "skills/mongoose": "/images/opt/skills/mongoose.webp",
+  "skills/tailwind": "/images/opt/skills/tailwind.webp",
+  "skills/materialUI": "/images/opt/skills/materialUI.webp",
+  "skills/typescript": "/images/opt/skills/typescript.webp",
+  "skills/skill4": "/images/opt/skills/skill4.webp"
+}

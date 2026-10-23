@@ -1,0 +1,72 @@
+.frame {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background-color: var(--surface-2);
+  background-size: cover;
+  background-position: center;
+}
+
+/* Shimmer while the image (and its blur preview) arrive. */
+.frame::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    100deg,
+    transparent 30%,
+    rgba(255, 255, 255, 0.06) 50%,
+    transparent 70%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.4s linear infinite;
+  pointer-events: none;
+  transition: opacity 0.4s ease;
+}
+
+.frameLoaded::after {
+  opacity: 0;
+  animation: none;
+}
+
+.frame picture {
+  display: contents;
+}
+
+.img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  filter: blur(12px);
+  transform: scale(1.02);
+  transition: opacity 0.6s ease, filter 0.6s ease, transform 0.6s ease;
+}
+
+.loaded {
+  opacity: 1;
+  filter: none;
+  transform: none;
+}
+
+.fallback {
+  display: grid;
+  place-items: center;
+  width: 100%;
+  height: 100%;
+  padding: 1rem;
+  color: var(--text-dim);
+  font-size: 0.85rem;
+  text-align: center;
+}
+
+@keyframes shimmer {
+  from {
+    background-position: 150% 0;
+  }
+  to {
+    background-position: -50% 0;
+  }
+}

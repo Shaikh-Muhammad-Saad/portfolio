@@ -1,67 +1,49 @@
-import moment from 'moment';
-
 import contentClient from '../contentful/client';
+import { projectDetailsList } from '../data/projects';
+import { site } from '../data/site';
 
-//pages/sitemap.xml.js
-const EXTERNAL_BLOG_URL = 'https://usamairfan.com/blog-details';
-const EXTERNAL_PROJECT_URL = 'https://usamairfan.com/project-details';
+const today = () => new Date().toISOString().slice(0, 10);
 
-function generateSiteMap(blogs, projects) {
+const urlEntry = (loc) => `
+  <url>
+    <loc>${loc}</loc>
+    <lastmod>${today()}</lastmod>
+  </url>`;
+
+function generateSiteMap(baseUrl, blogs) {
+  const urls = [
+    baseUrl,
+    `${baseUrl}/blog`,
+    ...projectDetailsList.map((p) => `${baseUrl}/project-details/${p.slug}`),
+    ...blogs.map(({ fields }) => `${baseUrl}/blog-details/${fields?.slug}`),
+  ];
+
   return `<?xml version="1.0" encoding="UTF-8"?>
-   <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-     <!--We manually set the two URLs we know already-->
-     <url>
-       <loc>https://usamairfan.com</loc>
-       <lastmod>${moment(new Date()).format('YYYY-MM-DD')}</lastmod>
-     </url>
-     <url>
-       <loc>https://usamairfan.com/blog</loc>
-       <lastmod>${moment(new Date()).format('YYYY-MM-DD')}</lastmod>
-     </url>
-     ${blogs
-       .map(({ fields }) => {
-         return `
-       <url>
-           <loc>${`${EXTERNAL_BLOG_URL}/${fields?.slug}`}</loc>
-           <lastmod>${moment(new Date()).format('YYYY-MM-DD')}</lastmod>
-       </url>
-     `;
-       })
-       .join('')}
-      ${projects
-        .map(({ fields }) => {
-          return `
-        <url>
-            <loc>${`${EXTERNAL_PROJECT_URL}/${fields?.slug}`}</loc>
-            <lastmod>${moment(new Date()).format('YYYY-MM-DD')}</lastmod>
-        </url>
-      `;
-        })
-        .join('')}
-   </urlset>
- `;
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">${urls
+    .map(urlEntry)
+    .join('')}
+</urlset>`;
 }
 
 function SiteMap() {
   // getServerSideProps will do the heavy lifting
 }
 
-export async function getServerSideProps({ res }) {
-  // We make an API call to gather the URLs for our site
-  const projects = await contentClient.getProjects();
-  const blogs = await contentClient.getBlogs();
+export async function getServerSideProps({ req, res }) {
+  const baseUrl = site.url || `https://${req.headers.host}`;
 
-  // We generate the XML sitemap with the posts data
-  const sitemap = generateSiteMap(blogs?.items, projects?.items);
+  let blogs = [];
+  try {
+    blogs = (await contentClient.getBlogs())?.items ?? [];
+  } catch {
+    // The sitemap should still list the portfolio pages if Contentful is unreachable.
+  }
 
   res.setHeader('Content-Type', 'text/xml');
-  // we send the XML to the browser
-  res.write(sitemap);
+  res.write(generateSiteMap(baseUrl, blogs));
   res.end();
 
-  return {
-    props: {},
-  };
+  return { props: {} };
 }
 
 export default SiteMap;

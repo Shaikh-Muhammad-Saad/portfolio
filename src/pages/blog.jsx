@@ -1,28 +1,28 @@
-import PageBanner from '@/src/components/PageBanner';
-import Layout from '@/src/layout/Layout';
+import styles from '../components/blog/Blog.module.css';
 
 import BlogList from '../components/blog/BlogList';
 import SEOWrapper from '../components/SEOWrapper';
 import contentClient from '../contentful/client';
+import Layout from '../layout/Layout';
 
-const Blog = ({ blogs }) => {
-  return (
-    <Layout header={2}>
-      <SEOWrapper />
-      {/* Page Banner Start */}
-      <PageBanner pageName='Code by day, script by night.' linkText='Blog' />
-      {/* Page Banner End */}
-      {/* Blog Page Area start */}
-      <section className='blog-page-area py-130 rpy-100 rel z-1'>
-        <div className='container container-1290'>
-          <BlogList blogs={blogs} />
-        </div>
-      </section>
-      {/* Blog Page Area end */}
-      {/* footer area start */}
-    </Layout>
-  );
-};
+const Blog = ({ blogs }) => (
+  <Layout>
+    <SEOWrapper title='Blog' />
+    <header className={styles.header}>
+      <div className='container'>
+        <span className='eyebrow'>Blog</span>
+        <h1 className={styles.pageTitle}>
+          Code by day, <span className='gradient-text'>script by night.</span>
+        </h1>
+      </div>
+    </header>
+    <section className={styles.list}>
+      <div className='container'>
+        <BlogList blogs={blogs} />
+      </div>
+    </section>
+  </Layout>
+);
 
 export async function getStaticProps() {
   const response = await contentClient.getBlogs();
@@ -33,9 +33,6 @@ export async function getStaticProps() {
     props: {
       blogs: response.items,
     },
-    // Next.js will attempt to re-generate the page:
-    // - When a request comes in
-    // - At most once every 10 seconds
     revalidate: 360, // In seconds
   };
 }
