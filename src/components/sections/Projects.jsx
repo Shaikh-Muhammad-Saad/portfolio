@@ -4,8 +4,12 @@ import ProjectCard from '@/src/components/projects/ProjectCard';
 import SectionHeading from '@/src/components/ui/SectionHeading';
 import { projectDetailsList } from '@/src/data/projects';
 
-// Bento rhythm on a 6-column grid: 2 wide, then rows of 3, closing with 2 wide.
-const sizeFor = (i, total) => (i < 2 || i >= total - 2 ? 'lg' : 'md');
+// Bento rhythm on a 6-column grid: 2 wide, then rows of 3, closing with as many
+// wide (2-per-row) cards as needed so no row is left half-empty.
+const sizeFor = (i, total) => {
+  const tail = [0, 4, 2][(total - 2) % 3];
+  return i < 2 || i >= total - tail ? 'lg' : 'md';
+};
 
 const Projects = () => (
   <section
