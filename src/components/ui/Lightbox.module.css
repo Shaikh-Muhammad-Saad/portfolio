@@ -4,6 +4,8 @@
   z-index: 1000;
   display: grid;
   grid-template-rows: auto minmax(0, 1fr) auto;
+  height: 100vh;
+  height: 100dvh;
   animation: fade 0.25s ease;
 }
 
@@ -69,26 +71,44 @@
   height: 22px;
 }
 
+/* The stage is a bounded box: the image either fits inside it or the stage scrolls. */
 .stage {
   position: relative;
-  display: grid;
-  place-items: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   min-height: 0;
+  overflow: auto;
+  overscroll-behavior: contain;
   padding: 8px clamp(16px, 7vw, 96px);
-  pointer-events: none;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255, 255, 255, 0.25) transparent;
 }
 
 .image {
-  grid-area: 1 / 1;
+  flex: none;
+  display: block;
   max-width: 100%;
   max-height: 100%;
+  width: auto;
+  height: auto;
   object-fit: contain;
   border-radius: 12px;
   box-shadow: 0 40px 100px -20px rgba(0, 0, 0, 0.8);
   opacity: 0;
   transform: scale(0.985);
   transition: opacity 0.35s ease, transform 0.45s var(--ease-out);
-  pointer-events: auto;
+}
+
+/* Full-page captures: readable width, natural height, scroll vertically. */
+.scroll {
+  align-items: flex-start;
+}
+
+.scroll .image {
+  width: min(100%, 1280px);
+  max-height: none;
+  margin: 0 auto;
 }
 
 .imageLoaded {
@@ -97,11 +117,30 @@
 }
 
 .spinner {
-  grid-area: 1 / 1;
+  position: absolute;
+  top: 50%;
+  left: 50%;
   width: 32px;
   height: 32px;
+  margin: -16px 0 0 -16px;
   color: var(--accent);
   animation: spin 0.9s linear infinite;
+}
+
+.scrollHint {
+  position: absolute;
+  left: 50%;
+  bottom: 92px;
+  z-index: 3;
+  transform: translateX(-50%);
+  padding: 6px 14px;
+  border-radius: 999px;
+  background: rgba(6, 8, 11, 0.8);
+  border: 1px solid var(--border-strong);
+  color: var(--text-muted);
+  font-size: 0.78rem;
+  pointer-events: none;
+  animation: hint 3.5s ease forwards;
 }
 
 .nav {
@@ -175,16 +214,49 @@
   }
 }
 
+@keyframes hint {
+  0%,
+  70% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
 @media (max-width: 640px) {
-  .nav {
-    top: auto;
-    bottom: 84px;
-    transform: none;
-    width: 44px;
-    height: 44px;
+  .stage {
+    padding: 4px 8px;
   }
 
-  .stage {
-    padding-inline: 12px;
+  .image {
+    border-radius: 8px;
+  }
+
+  .scroll .image {
+    width: 100%;
+  }
+
+  /* Arrows sit over the bottom of the image so they never cover its centre. */
+  .nav {
+    top: auto;
+    bottom: 76px;
+    transform: none;
+    width: 42px;
+    height: 42px;
+    background: rgba(6, 8, 11, 0.85);
+  }
+
+  .thumbs {
+    padding-top: 8px;
+  }
+
+  .thumb {
+    width: 56px;
+    height: 38px;
+  }
+
+  .scrollHint {
+    bottom: 70px;
   }
 }

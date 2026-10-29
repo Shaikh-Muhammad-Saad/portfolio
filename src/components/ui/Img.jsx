@@ -19,6 +19,7 @@ const toSrcSet = (list) => list.map(([src, w]) => `${src} ${w}w`).join(', ');
  * - `src`: a remote URL (Cloudinary/Contentful get resized on their CDN).
  * - `photo`: an entry from src/data/image-manifest.json (pre-optimized local AVIF/WebP).
  * - `priority`: above-the-fold hero image (eager + high fetch priority); `eager`: skip lazy-loading only.
+ * - `onDimensions(width, height)`: called with the natural size once the image has loaded.
  * The parent decides the size; the image fills it.
  */
 const Img = ({
@@ -33,14 +34,24 @@ const Img = ({
   position = 'center',
   className = '',
   imgClassName = '',
+  onDimensions,
 }) => {
   const ref = useRef(null);
   const [loaded, setLoaded] = useState(false);
   const [failed, setFailed] = useState(false);
 
+  const handleLoaded = (el) => {
+    setLoaded(true);
+    if (onDimensions && el?.naturalWidth) {
+      onDimensions(el.naturalWidth, el.naturalHeight);
+    }
+  };
+
   // Images served from cache can finish before React hydrates and attaches onLoad.
   useEffect(() => {
-    if (ref.current?.complete && ref.current.naturalWidth) setLoaded(true);
+    if (ref.current?.complete && ref.current.naturalWidth) {
+      handleLoaded(ref.current);
+    }
   }, []);
 
   const blur = photo ? photo.blur : placeholderUrl(src);
@@ -51,7 +62,7 @@ const Img = ({
     loading: priority || eager ? 'eager' : 'lazy',
     decoding: priority ? 'sync' : 'async',
     fetchpriority: priority ? 'high' : 'auto',
-    onLoad: () => setLoaded(true),
+    onLoad: (e) => handleLoaded(e.currentTarget),
     onError: () => setFailed(true),
     className: `${styles.img} ${loaded ? styles.loaded : ''} ${imgClassName}`,
     style: { objectFit: fit, objectPosition: position },
