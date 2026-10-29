@@ -22,7 +22,11 @@ const viewSrc = (src) => {
 const Lightbox = ({ images, index, onChange, title }) => {
   const open = index !== null && index !== undefined;
   const [loadedSrc, setLoadedSrc] = useState(null);
+  // Full-page captures are far taller than the screen: show them at a readable
+  // width and let the stage scroll instead of shrinking them to fit.
+  const [scrollable, setScrollable] = useState({});
   const closeRef = useRef(null);
+  const stageRef = useRef(null);
   const thumbsRef = useRef(null);
   const touchX = useRef(null);
   const count = images.length;
@@ -56,19 +60,18 @@ const Lightbox = ({ images, index, onChange, title }) => {
   // Preload neighbours so arrow navigation feels instant; keep the active thumb in view.
   useEffect(() => {
     if (!open) return;
+    stageRef.current?.scrollTo({ top: 0 });
     [1, -1, 2].forEach((d) => {
       if (count > 1) {
         const img = new window.Image();
         img.src = viewSrc(images[(index + d + count) % count].src);
       }
     });
-    thumbsRef.current
-      ?.querySelector(`[data-i="${index}"]`)
-      ?.scrollIntoView({
-        behavior: 'smooth',
-        inline: 'center',
-        block: 'nearest',
-      });
+    thumbsRef.current?.querySelector(`[data-i="${index}"]`)?.scrollIntoView({
+      behavior: 'smooth',
+      inline: 'center',
+      block: 'nearest',
+    });
   }, [open, index, images, count]);
 
   if (!open || typeof document === 'undefined') return null;
@@ -76,6 +79,23 @@ const Lightbox = ({ images, index, onChange, title }) => {
   const current = images[index];
   const src = viewSrc(current.src);
   const loaded = loadedSrc === src;
+  const isScroll = Boolean(scrollable[src]);
+
+  const onImageLoad = (e) => {
+    const { naturalWidth: w, naturalHeight: h } = e.currentTarget;
+    const stage = stageRef.current;
+    if (stage && w) {
+      const fitWidth = Math.min(stage.clientWidth, 1280);
+      const tall = (fitWidth * h) / w > stage.clientHeight * 1.25;
+      if (tall) setScrollable((prev) => ({ ...prev, [src]: true }));
+    }
+    setLoadedSrc(src);
+  };
+
+  // Clicking the empty area around the image closes the viewer.
+  const onStageClick = (e) => {
+    if (e.target === e.currentTarget) close();
+  };
 
   const onTouchStart = (e) => {
     touchX.current = e.touches[0].clientX;
@@ -118,7 +138,9 @@ const Lightbox = ({ images, index, onChange, title }) => {
       </div>
 
       <div
-        className={styles.stage}
+        ref={stageRef}
+        className={`${styles.stage} ${isScroll ? styles.scroll : ''}`}
+        onClick={onStageClick}
         onTouchStart={onTouchStart}
         onTouchEnd={onTouchEnd}
       >
@@ -130,10 +152,15 @@ const Lightbox = ({ images, index, onChange, title }) => {
           src={src}
           alt={current.alt || ''}
           className={`${styles.image} ${loaded ? styles.imageLoaded : ''}`}
-          onLoad={() => setLoadedSrc(src)}
+          onLoad={onImageLoad}
           decoding='async'
         />
       </div>
+      {isScroll && loaded ? (
+        <span className={styles.scrollHint} aria-hidden='true'>
+          Scroll to see the full page
+        </span>
+      ) : null}
 
       {count > 1 ? (
         <>

@@ -4,6 +4,7 @@
   gap: 16px;
 }
 
+/* Uniform 16:10 cards; normal screens are letterboxed so the whole screen is visible. */
 .item {
   position: relative;
   display: block;
@@ -18,6 +19,39 @@
     box-shadow 0.5s var(--ease-out);
 }
 
+/* Full-page captures: show the top of the page, fade out the rest. */
+.long::after {
+  content: '';
+  position: absolute;
+  inset: auto 0 0;
+  height: 90px;
+  background: linear-gradient(180deg, transparent, rgba(6, 8, 11, 0.85));
+  pointer-events: none;
+}
+
+.longBadge {
+  position: absolute;
+  left: 12px;
+  bottom: 12px;
+  z-index: 2;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  height: 28px;
+  padding: 0 10px;
+  border-radius: 999px;
+  background: rgba(6, 8, 11, 0.75);
+  border: 1px solid var(--border-strong);
+  color: var(--text);
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.longBadge svg {
+  width: 14px;
+  height: 14px;
+}
+
 .item:hover {
   border-color: rgba(85, 230, 165, 0.4);
   transform: translateY(-4px);
@@ -29,12 +63,13 @@
 }
 
 .item:hover > span:first-child {
-  transform: scale(1.04);
+  transform: scale(1.03);
 }
 
 .overlay {
   position: absolute;
   inset: 0;
+  z-index: 3;
   display: flex;
   align-items: flex-end;
   justify-content: space-between;
@@ -42,6 +77,14 @@
   background: linear-gradient(180deg, transparent 50%, rgba(6, 8, 11, 0.7));
   opacity: 0;
   transition: opacity 0.3s ease;
+}
+
+.long .overlay {
+  justify-content: flex-end;
+}
+
+.long .num {
+  display: none;
 }
 
 .item:hover .overlay,
@@ -79,5 +122,15 @@
 @media (max-width: 560px) {
   .grid {
     grid-template-columns: 1fr;
+  }
+
+  /* No hover on touch screens: keep the zoom hint visible. */
+  .overlay {
+    opacity: 1;
+    background: none;
+  }
+
+  .num {
+    display: none;
   }
 }
